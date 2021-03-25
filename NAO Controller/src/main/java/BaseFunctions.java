@@ -3,7 +3,6 @@ import com.aldebaran.qi.helper.proxies.ALMotion;
 import com.aldebaran.qi.helper.proxies.ALRobotPosture;
 import com.aldebaran.qi.helper.proxies.ALTextToSpeech;
 
-
 public class BaseFunctions {
 
     public Application application;
