@@ -9,7 +9,6 @@
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
-
 public class mqtt {
 
     // Starting client & assigning values to passwords and usernames.
