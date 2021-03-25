@@ -6,21 +6,20 @@
  * Date: 09-03-2021
  */
 
-import java.util.Scanner;
-
 public class main {
 
     public static void main(String[] args) throws Exception {
 
         // Calling classes, used for MQTT functions & NAO functions.
         mqtt mqtt = new mqtt();
-        NAO nao = new NAO();
+        BaseFunctions baseFunctions = new BaseFunctions();
+        Workouts workouts = new Workouts();
 
 
         //  ONE TIME ONLY, connectiong to NAO.
         try {
             // Change hostname when using a physical robot.
-            nao.connect("localhost", 9559);
+            baseFunctions.connect("localhost", 9559);
             Thread.sleep(3000);
         } catch (Exception e) {
             System.out.println("Connection to NAO could not be made, to try again restart the code.");
@@ -38,34 +37,33 @@ public class main {
                     break;
 
                 case "oefeningarmen":
-                    nao.armWorkout(4);
+                    workouts.armWorkout(4);
                     System.out.println("Armen workout uitgevoerd.");
 
                     break;
 
                 case "walk":
-                    nao.walk(1f, 0f, 0f);
+                    baseFunctions.walk(1f, 0f, 0f);
                     System.out.println("Walk uitgevoerd.");
                     break;
 
                 case "layonback":
-                    nao.layOnBack();
+                    baseFunctions.layOnBack();
                     System.out.println("LayOnBack uitgevoerd.");
 
                     break;
 
                 case "stand":
-                    nao.stand();
+                    baseFunctions.stand();
                     System.out.println("Stand uitgevoerd.");
 
                     break;
 
                 case "benenworkout":
-                    nao.legWorkout(5);
+                    workouts.legWorkout(5);
                     System.out.println("Benen workout uitgevoerd.");
 
                     break;
-
 
                 default:
             }
