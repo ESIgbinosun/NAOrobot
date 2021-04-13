@@ -1,4 +1,5 @@
 import com.aldebaran.qi.Application;
+import com.aldebaran.qi.helper.proxies.ALAudioPlayer;
 import com.aldebaran.qi.helper.proxies.ALMotion;
 import com.aldebaran.qi.helper.proxies.ALRobotPosture;
 import com.aldebaran.qi.helper.proxies.ALTextToSpeech;
@@ -76,6 +77,11 @@ public class BaseFunctions {
         tts.say(tekst);
     }
 
+    public void test() throws Exception {
+        ALTextToSpeech tts = new ALTextToSpeech(this.application.session());
+        tts.say("Test");
+    }
+
     //Walk
     public void walk(float x, float y, float z) throws Exception {
         ALMotion alMotion = new ALMotion(this.application.session());
@@ -89,5 +95,13 @@ public class BaseFunctions {
         ALMotion alMotion = new ALMotion(this.application.session());
         alMotion.killAll();
     }
+
+//    // play music non working
+//    public void play(String ID) throws Exception {
+//        ALAudioPlayer alAudioPlayer = new ALAudioPlayer(this.application.session());
+//        alAudioPlayer.playFile(ID);
+//
+//    }
+
 }
 

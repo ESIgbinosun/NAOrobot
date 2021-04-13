@@ -32,7 +32,7 @@ public class main {
                 // testMsg, used for checking connection.
                 case "testmsg":
                     System.out.println("Working!");
-
+                    baseFunctions.test();
                     break;
 
                 case "oefeningarmen":
@@ -62,6 +62,11 @@ public class main {
                     workouts.legWorkout(5);
                     System.out.println("Benen workout uitgevoerd.");
 
+                    break;
+
+                case "play":
+                    baseFunctions.play("filepath");
+                    System.out.println("Play uitgevoerd.");
                     break;
 
                 default:
