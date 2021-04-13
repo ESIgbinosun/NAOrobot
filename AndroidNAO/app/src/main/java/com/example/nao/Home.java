@@ -70,8 +70,8 @@ public class Home extends AppCompatActivity {
         mqtt.publishMSG("testmsg");
     }
 
-    public void layOnBack (View v) throws Exception {
-        mqtt.publishMSG("layonback");
+    public void play (View v) throws Exception {
+        mqtt.publishMSG("play");
     }
 
     public void oefeningBenen (View v) throws Exception {
