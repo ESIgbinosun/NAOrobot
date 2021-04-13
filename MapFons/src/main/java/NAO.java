@@ -284,4 +284,11 @@ public class NAO {
             robotPosture.goToPosture("StandInit", 0.5f);
         }
     }
+
+    public void TalkAndWalk(float x, float y, float theta, String tekst) throws Exception{
+        ALMotion alMotion = new ALMotion(this.application.session());
+        ALTextToSpeech alTextToSpeech = new ALTextToSpeech(this.application.session());
+        alMotion.walkTo(x,y,theta);
+        alTextToSpeech.say(tekst);
+    }
 }
