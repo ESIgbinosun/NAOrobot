@@ -7,7 +7,7 @@
  * Edit Date:  15-04-2021
  */
 
-public class main implements stop {
+public class main {
 
 
     public static void main(String[] args) throws Exception {
