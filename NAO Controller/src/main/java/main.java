@@ -24,7 +24,7 @@ public class main {
             System.out.println("Connection to NAO could not be made, to try again restart the code.");
         }
 
-        // Endless loop checking for input from received messages Mqtt.
+        // Endless loop checking for input from received messages Mqtt.java.
         while (true) {
 
             switch (mqtt.readMsg().toLowerCase()) {
