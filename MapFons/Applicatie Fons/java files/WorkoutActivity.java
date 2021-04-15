@@ -7,7 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
+import org.eclipse.paho.client.mqttv3.MqttClient;
+
 public class WorkoutActivity extends AppCompatActivity {
+
+    MqttClient client;
+    Mqtt mqtt = new Mqtt(client);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +20,12 @@ public class WorkoutActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_workout);
+        mqtt.makeClient();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     // Fullscreen
@@ -36,4 +47,12 @@ public class WorkoutActivity extends AppCompatActivity {
         Intent main = new Intent(this, MainActivity.class);
         startActivity(main);
     }
+
+
+
+    public void WORKOUT1(View v){
+        mqtt.publishMSG("langef5","benenoefening");
+    }
+    public void WORKOUT2(View v) { mqtt.publishMSG("langef5","armenoefening"); }
+    public void WORKOUT3(View v) { mqtt.publishMSG("langef5","oplevering"); }
 }
