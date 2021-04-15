@@ -4,16 +4,17 @@
  * Author: Diego Brandjes
  * Class: IT101
  * Date: 09-03-2021
+ * Edit Date:  15-04-2021
  */
 
-public class main {
+public class main implements stop {
+
 
     public static void main(String[] args) throws Exception {
 
         // Calling classes, used for MQTT functions & NAO functions.
         mqtt mqtt = new mqtt();
         BaseFunctions baseFunctions = new BaseFunctions();
-        Workouts workouts = new Workouts();
 
         //  ONE TIME ONLY, connectiong to NAO.
         try {
@@ -36,7 +37,8 @@ public class main {
                     break;
 
                 case "oefeningarmen":
-                    workouts.armWorkout(4);
+
+                    baseFunctions.armWorkout(4);
                     System.out.println("Armen workout uitgevoerd.");
 
                     break;
@@ -59,13 +61,14 @@ public class main {
                     break;
 
                 case "benenworkout":
-                    workouts.legWorkout(5);
+                    baseFunctions.legWorkout(5);
                     System.out.println("Benen workout uitgevoerd.");
 
                     break;
 
                 case "play":
-                    baseFunctions.play("filepath");
+                    //Change filepath when using a physical robot!
+                    baseFunctions.play("C:\\Users\\Caprisun\\AppData\\Local\\Temp\\Untitledv86UUJY\\wavw.wav");
                     System.out.println("Play uitgevoerd.");
                     break;
 
