@@ -17,16 +17,20 @@ public class Main {
             int reps;
 
     switch (mqtt.readMsg().toLowerCase()) {
-        case "oplevering":
-            nao.Stand();
-            nao.ArmExercise(2);
-            Thread.sleep(2000);
-            nao.Squat(2);
-            Thread.sleep(2000);
-            nao.armExerciseOpen();
-            nao.armExerciseClose();
-            Thread.sleep(2000);
-            nao.Stand();
+        case "muziek1":
+            System.out.println("MALLE BABBE");
+            break;
+        case "muziek2":
+            System.out.println("EEN EIGEN HUIS");
+            break;
+        case "muziek3":
+            System.out.println("STIEKEM GEDANST");
+            break;
+        case "muziek4":
+            System.out.println("LAND VAN MAAS EN WAAL");
+            break;
+        case "muziek5":
+            System.out.println("MET DE VLAM IN DE PIJP");
             break;
         case "armenoefening":
             int aantalkeerArmen = 3;
