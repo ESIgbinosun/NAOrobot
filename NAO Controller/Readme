@@ -4,5 +4,5 @@ make the NAO functions usable.
 We tested this on a NAO robot from Softbank Robotics, other uses have not been tested so far.
 
 In order to use the main class you should have a running MQTT server to be able to receive function messages,
-this is normaly done via the app. You should change the credentials to your own MQTT server.
+this is normally done via the app. You should change the credentials to your own MQTT server.
 
