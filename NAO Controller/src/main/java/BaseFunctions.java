@@ -8,24 +8,34 @@
  */
 
 import com.aldebaran.qi.Application;
+import com.aldebaran.qi.Callback;
 import com.aldebaran.qi.helper.proxies.*;
 
 import java.nio.ByteBuffer;
+import java.security.Key;
 import java.util.List;
 
 public class BaseFunctions {
 
     public Application application;
 
+    public ALRobotPosture.AsyncALRobotPosture async;
+    public ALMotion.AsyncALMotion asyncALMotion;
 
     //Connect via input.
-    public void connect(String hostname, int port) {
+    public void connect(String hostname, int port) throws Exception {
 
         String robotUrl = "tcp://" + hostname + ":" + port;
         // Create a new application
         this.application = new Application(new String[]{}, robotUrl);
         // Start your application
         application.start();
+
+        ALRobotPosture robotPosture = new ALRobotPosture(this.application.session());
+        ALMotion alMotion = new ALMotion(this.application.session());
+
+        this.async = robotPosture.async();
+        asyncALMotion = alMotion.async();
     }
 
     //sit
@@ -73,7 +83,27 @@ public class BaseFunctions {
     //Stand2
     public void stand() throws Exception {
         ALRobotPosture robotPosture = new ALRobotPosture(this.application.session());
+
         robotPosture.goToPosture("Stand", 1.0f);
+
+//        async.goToPosture("Sit", 1.0f);
+//        async.goToPosture("Stand", 1.0f);
+//        async.goToPosture("Sit", 1.0f);
+//        async.goToPosture("Stand", 1.0f);
+//        async.goToPosture("Sit", 1.0f);
+//        Thread.interrupted();
+//        //async.call();
+//        System.out.println("run");
+//        asyncALMotion.killMove();
+//        asyncALMotion.killAll();
+//        System.out.println("stop");
+//        ALRobotPosture robotPosture = new ALRobotPosture(this.application.session());
+//        ALRobotPosture.AsyncALRobotPosture async = robotPosture.async();
+//        async.goToPosture("Stand", 1.0f);
+//        System.out.println("run");
+
+        //test
+        //robotPosture.stopMove();
     }
 
     //Speak
@@ -111,6 +141,33 @@ public class BaseFunctions {
         Thread.sleep(1000);
     }
 
+    // camera
+//    public void camera() throws Exception {
+//        ALVideoDevice videoDevice = new ALVideoDevice(this.application.session());
+//        String videoName = videoDevice.subscribeCamera("cameraFront", 0, 2, 11,5);
+//
+//        Mat img = new Mat(new size(640, 480), CV_8UC3);
+//
+//        while (true) {
+//
+//            List<Object> videoObject = (List<Object>)videoDevice.getImagesRemote(videoName);
+//
+//            ByteBuffer imgData = (ByteBuffer) videoObject.get(6);
+//            byte[] data = new byte[imgData.capacity()];
+//
+//            ((ByteBuffer)imgData.duplicate().clear()).get(data);
+//            img.put(0,0, data);
+//
+//            videoDevice.releaseImage(videoName);
+//            HighGui.imshow("Image", img);
+//            HighGui.waitkey(1);
+//
+//        }
+//    }
+
+
+    /* Workouts */
+
     //Arm workout
     public void armWorkout(int rep) throws Exception {
 
@@ -133,7 +190,6 @@ public class BaseFunctions {
             alMotion.setAngles("LShoulderPitch", -1, 0.2f);
             alMotion.setAngles("RShoulderPitch", -1, 0.2f);
             Thread.sleep(1000);
-
         }
 
         alMotion.setAngles("LShoulderRoll", -2.3, 0.1f);
@@ -285,31 +341,6 @@ public class BaseFunctions {
         ALRobotPosture alRobotPosture = new ALRobotPosture(this.application.session());
         alRobotPosture.goToPosture("Stand", 1.0f);
     }
-
-
-//    // camera
-//    public void camera() throws Exception {
-//        ALVideoDevice videoDevice = new ALVideoDevice(this.application.session());
-//        String videoName = videoDevice.subscribeCamera("cameraFront", 0, 2, 11,5);
-//
-//        Mat img = new Mat(new size(640, 480), CV_8UC3);
-//
-//        while (true) {
-//
-//            List<Object> videoObject = (List<Object>)videoDevice.getImagesRemote(videoName);
-//
-//            ByteBuffer imgData = (ByteBuffer) videoObject.get(6);
-//            byte[] data = new byte[imgData.capacity()];
-//
-//            ((ByteBuffer)imgData.duplicate().clear()).get(data);
-//            img.put(0,0, data);
-//
-//            videoDevice.releaseImage(videoName);
-//            HighGui.imshow("Image", img);
-//            HighGui.waitkey(1);
-//
-//        }
-//    }
 
 }
 

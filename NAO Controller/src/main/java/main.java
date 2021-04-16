@@ -4,8 +4,10 @@
  * Author: Diego Brandjes
  * Class: IT101
  * Date: 09-03-2021
- * Edit Date:  15-04-2021
+ * Edit Date:  17-04-2021
  */
+
+import java.sql.Array;
 
 public class main {
 
@@ -27,6 +29,24 @@ public class main {
 
         // Endless loop checking for input from received messages Mqtt.java.
         while (true) {
+
+            // Speak function directly from app, text to speech on NAO.
+            String input = mqtt.readMsg().toLowerCase();
+            if (input.startsWith("speak")){
+
+                char array[] = input.toCharArray();
+                char leeg[] = new char[array.length];
+
+                for (int i = 5; i < array.length; i++) {
+                    leeg[i] = array[i];
+                }
+
+                String iets = String.valueOf(leeg);
+                System.out.println(iets);
+                baseFunctions.speak(iets);
+                input = "";
+            }
+
 
             switch (mqtt.readMsg().toLowerCase()) {
 
@@ -57,13 +77,11 @@ public class main {
                 case "stand":
                     baseFunctions.stand();
                     System.out.println("Stand uitgevoerd.");
-
                     break;
 
                 case "benenworkout":
                     baseFunctions.legWorkout(5);
                     System.out.println("Benen workout uitgevoerd.");
-
                     break;
 
                 case "play":
@@ -71,6 +89,7 @@ public class main {
                     baseFunctions.play("C:\\Users\\Caprisun\\AppData\\Local\\Temp\\Untitledv86UUJY\\wavw.wav");
                     System.out.println("Play uitgevoerd.");
                     break;
+
 
                 default:
             }
