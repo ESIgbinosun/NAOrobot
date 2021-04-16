@@ -8,11 +8,9 @@
  */
 
 import com.aldebaran.qi.Application;
-import com.aldebaran.qi.Callback;
 import com.aldebaran.qi.helper.proxies.*;
 
 import java.nio.ByteBuffer;
-import java.security.Key;
 import java.util.List;
 
 public class BaseFunctions {
