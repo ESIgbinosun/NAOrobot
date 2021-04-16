@@ -29,7 +29,7 @@
         android:layout_marginTop="30dp"
         android:background="#000000"
         android:hapticFeedbackEnabled="true"
-        android:onClick="teksttospeach"
+        android:onClick="speak"
         android:text="Speak"
         android:textColor="#000000"
         app:backgroundTint="#FFFFFF"
