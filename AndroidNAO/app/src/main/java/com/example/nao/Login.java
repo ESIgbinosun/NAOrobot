@@ -1,7 +1,7 @@
 /**
  * Login page view
  *
- * Date   25-02-2021
+ * Date   17-04-2021
  * Author Diego Brandjes
  */
 

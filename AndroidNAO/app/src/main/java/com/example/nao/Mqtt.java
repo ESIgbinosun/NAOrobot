@@ -1,3 +1,10 @@
+/**
+ * MQTT app
+ *
+ * Date   17-04-2021
+ * Author Diego Brandjes
+ */
+
 package com.example.nao;
 
 import androidx.appcompat.app.AppCompatActivity;

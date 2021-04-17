@@ -1,7 +1,7 @@
 /**
  * Start page view
  *
- * Date   25-02-2021
+ * Date   17-04-2021
  * Author Diego Brandjes
  */
 
@@ -51,11 +51,8 @@ public class MainActivity extends AppCompatActivity {
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         }
     }
-
     public void launchHome(View v) {
 
-//        final MediaPlayer mp = MediaPlayer.create(this, R.raw.sample);
-//        mp.start();
         Intent i = new Intent(this, Login.class);
         startActivity(i);
     }
