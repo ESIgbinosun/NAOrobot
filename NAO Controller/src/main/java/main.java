@@ -19,6 +19,7 @@ public class main {
         //  ONE TIME ONLY, connectiong to NAO.
         try {
             // Change hostname when using a physical robot.
+            // "padrick.robot.hva-robots.nl"
             baseFunctions.connect("localhost", 9559);
             Thread.sleep(3000);
         } catch (Exception e) {
@@ -44,7 +45,6 @@ public class main {
                 baseFunctions.speak(iets);
                 input = "";
             }
-
 
             switch (mqtt.readMsg().toLowerCase()) {
 
@@ -82,10 +82,37 @@ public class main {
                     System.out.println("Benen workout uitgevoerd.");
                     break;
 
-                case "play":
+                /*
+                 * Be sure to add the filepaths to the songs uploaded on the robot
+                 * if this isn't done there is a chance the controller code might crash
+                 * because it can't find the file.
+                 */
+                case "songa":
                     //Change filepath when using a physical robot!
-                    baseFunctions.play("C:\\Users\\Caprisun\\AppData\\Local\\Temp\\Untitledv86UUJY\\wavw.wav");
-                    System.out.println("Play uitgevoerd.");
+                    try {
+                        baseFunctions.play("C:\\Users\\Caprisun\\AppData\\Local\\Temp\\Untitledv86UUJY\\wavw.wav");
+                        System.out.println("Play uitgevoerd.");
+                    }finally {}
+                    break;
+
+                case "songb":
+                    //Change filepath when using a physical robot!
+                    try {
+                        baseFunctions.play("song2");
+                        System.out.println("Play2 uitgevoerd.");
+                    }finally {}
+                    break;
+
+                case "songc":
+                    //Change filepath when using a physical robot!
+                    try {
+                        baseFunctions.play("song3");
+                        System.out.println("Play3 uitgevoerd.");
+                    }finally {}
+                    break;
+
+                case "pause":
+                    baseFunctions.stopPlaying(1);
                     break;
 
 

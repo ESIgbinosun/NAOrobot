@@ -132,11 +132,17 @@ public class BaseFunctions {
         alMotion.killAll();
     }
 
-    // play music non working
+    // play music
     public void play(String ID) throws Exception {
         ALAudioPlayer alAudioPlayer = new ALAudioPlayer(this.application.session());
         alAudioPlayer.playFile(ID);
         Thread.sleep(1000);
+    }
+
+    // kill music
+    public void stopPlaying(Integer ID) throws Exception{
+        ALAudioPlayer alAudioPlayer = new ALAudioPlayer(this.application.session());
+        alAudioPlayer.pause(ID);
     }
 
     // camera
