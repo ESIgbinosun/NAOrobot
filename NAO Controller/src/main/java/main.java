@@ -17,7 +17,7 @@ public class main {
         BaseFunctions baseFunctions = new BaseFunctions();
 
         while (true) {
-            //  ONE TIME ONLY, connectiong to NAO.
+            //  ONE TIME ONLY, connecting to NAO.
             try {
                 // Change hostname when using a physical robot.
                 // "padrick.robot.hva-robots.nl"
