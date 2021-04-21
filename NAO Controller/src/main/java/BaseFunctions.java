@@ -83,25 +83,6 @@ public class BaseFunctions {
         ALRobotPosture robotPosture = new ALRobotPosture(this.application.session());
 
         robotPosture.goToPosture("Stand", 1.0f);
-
-//        async.goToPosture("Sit", 1.0f);
-//        async.goToPosture("Stand", 1.0f);
-//        async.goToPosture("Sit", 1.0f);
-//        async.goToPosture("Stand", 1.0f);
-//        async.goToPosture("Sit", 1.0f);
-//        Thread.interrupted();
-//        //async.call();
-//        System.out.println("run");
-//        asyncALMotion.killMove();
-//        asyncALMotion.killAll();
-//        System.out.println("stop");
-//        ALRobotPosture robotPosture = new ALRobotPosture(this.application.session());
-//        ALRobotPosture.AsyncALRobotPosture async = robotPosture.async();
-//        async.goToPosture("Stand", 1.0f);
-//        System.out.println("run");
-
-        //test
-        //robotPosture.stopMove();
     }
 
     //Speak
