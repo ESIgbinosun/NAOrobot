@@ -140,7 +140,7 @@ public class BaseFunctions {
     }
 
     // kill music
-    public void stopPlaying(Integer ID) throws Exception{
+    public void stopPlaying(Integer ID) throws Exception {
         ALAudioPlayer alAudioPlayer = new ALAudioPlayer(this.application.session());
         alAudioPlayer.pause(ID);
     }

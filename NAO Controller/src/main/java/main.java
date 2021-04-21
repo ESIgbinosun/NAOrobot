@@ -16,14 +16,18 @@ public class main {
         mqtt mqtt = new mqtt();
         BaseFunctions baseFunctions = new BaseFunctions();
 
-        //  ONE TIME ONLY, connectiong to NAO.
-        try {
-            // Change hostname when using a physical robot.
-            // "padrick.robot.hva-robots.nl"
-            baseFunctions.connect("localhost", 9559);
-            Thread.sleep(3000);
-        } catch (Exception e) {
-            System.out.println("Connection to NAO could not be made, to try again restart the code.");
+        while (true) {
+            //  ONE TIME ONLY, connectiong to NAO.
+            try {
+                // Change hostname when using a physical robot.
+                // "padrick.robot.hva-robots.nl"
+                baseFunctions.connect("localhost", 9559);
+                Thread.sleep(2000);
+                break;
+            } catch (Exception e) {
+                System.out.println("Connection to NAO could not be made, Trying again in 5 seconds.");
+                Thread.sleep(5000);
+            }
         }
 
         // Endless loop checking for input from received messages Mqtt.java.
@@ -31,7 +35,7 @@ public class main {
 
             // Speak function directly from app, text to speech on NAO.
             String input = mqtt.readMsg().toLowerCase();
-            if (input.startsWith("speak")){
+            if (input.startsWith("speak")) {
 
                 char array[] = input.toCharArray();
                 char leeg[] = new char[array.length];
@@ -92,7 +96,8 @@ public class main {
                     try {
                         baseFunctions.play("C:\\Users\\Caprisun\\AppData\\Local\\Temp\\Untitledv86UUJY\\wavw.wav");
                         System.out.println("Play uitgevoerd.");
-                    }finally {}
+                    } finally {
+                    }
                     break;
 
                 case "songb":
@@ -100,7 +105,8 @@ public class main {
                     try {
                         baseFunctions.play("song2");
                         System.out.println("Play2 uitgevoerd.");
-                    }finally {}
+                    } finally {
+                    }
                     break;
 
                 case "songc":
@@ -108,7 +114,8 @@ public class main {
                     try {
                         baseFunctions.play("song3");
                         System.out.println("Play3 uitgevoerd.");
-                    }finally {}
+                    } finally {
+                    }
                     break;
 
                 case "pause":
