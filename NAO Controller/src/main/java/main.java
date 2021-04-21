@@ -9,7 +9,6 @@
 
 public class main {
 
-
     public static void main(String[] args) throws Exception {
 
         // Calling classes, used for MQTT functions & NAO functions.

@@ -13,6 +13,7 @@ import com.aldebaran.qi.helper.proxies.*;
 import java.nio.ByteBuffer;
 import java.util.List;
 
+
 public class BaseFunctions {
 
     public Application application;
