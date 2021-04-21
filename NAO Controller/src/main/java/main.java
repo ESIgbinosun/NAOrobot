@@ -62,7 +62,6 @@ public class main {
 
                     baseFunctions.armWorkout(4);
                     System.out.println("Armen workout uitgevoerd.");
-
                     break;
 
                 case "walk":
@@ -73,7 +72,6 @@ public class main {
                 case "layonback":
                     baseFunctions.layOnBack();
                     System.out.println("LayOnBack uitgevoerd.");
-
                     break;
 
                 case "stand":
@@ -94,29 +92,20 @@ public class main {
 
                 case "songa":
                     //Change filepath when using a physical robot!
-                    try {
-                        baseFunctions.play("C:\\Users\\Caprisun\\AppData\\Local\\Temp\\Untitledv86UUJY\\wavw.wav");
-                        System.out.println("Play uitgevoerd.");
-                    } finally {
-                    }
+                    baseFunctions.play("C:\\Users\\Caprisun\\AppData\\Local\\Temp\\Untitledv86UUJY\\wavw.wav");
+                    System.out.println("Play uitgevoerd.");
                     break;
 
                 case "songb":
                     //Change filepath when using a physical robot!
-                    try {
-                        baseFunctions.play("song2");
-                        System.out.println("Play2 uitgevoerd.");
-                    } finally {
-                    }
+                    baseFunctions.play("song2");
+                    System.out.println("Play2 uitgevoerd.");
                     break;
 
                 case "songc":
                     //Change filepath when using a physical robot!
-                    try {
-                        baseFunctions.play("song3");
-                        System.out.println("Play3 uitgevoerd.");
-                    } finally {
-                    }
+                    baseFunctions.play("song3");
+                    System.out.println("Play3 uitgevoerd.");
                     break;
 
                 case "pause":

@@ -82,7 +82,6 @@ public class BaseFunctions {
     //Stand2
     public void stand() throws Exception {
         ALRobotPosture robotPosture = new ALRobotPosture(this.application.session());
-
         robotPosture.goToPosture("Stand", 1.0f);
     }
 
@@ -117,7 +116,10 @@ public class BaseFunctions {
     // play music
     public void play(String ID) throws Exception {
         ALAudioPlayer alAudioPlayer = new ALAudioPlayer(this.application.session());
-        alAudioPlayer.playFile(ID);
+        try {
+            alAudioPlayer.playFile(ID);
+        } catch (Exception e) {
+        }
         Thread.sleep(1000);
     }
 
@@ -156,6 +158,8 @@ public class BaseFunctions {
 
     //Arm workout
     public void armWorkout(int rep) throws Exception {
+
+        stand();
 
         ALMotion alMotion = new ALMotion(this.application.session());
 
