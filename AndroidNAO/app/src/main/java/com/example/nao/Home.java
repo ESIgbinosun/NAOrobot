@@ -82,7 +82,7 @@ public class Home extends AppCompatActivity {
     public void speak (View v) throws Exception {
         findViewById(R.id.invoer);
         EditText speaka = (EditText) findViewById(R.id.invoer);
-        String speak = "speak" + speaka.getText().toString();
+        String speak = ("speak" + speaka.getText().toString());
         mqtt.publishMSG(speak);
     }
 
