@@ -19,7 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9ff1f9b-f929-4beb-bab9-b3582dfbaa3c" name="Default Changelist" comment="moved" />
+    <list default="true" id="f9ff1f9b-f929-4beb-bab9-b3582dfbaa3c" name="Default Changelist" comment="I moved it">
+      <change beforePath="$PROJECT_DIR$/.idea/it101b-4.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -117,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619005913117</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="I moved it">
+      <created>1619006169399</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1619006169399</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -130,11 +142,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="move" />
     <MESSAGE value="moved" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved" />
+    <MESSAGE value="I moved it" />
+    <option name="LAST_COMMIT_MESSAGE" value="I moved it" />
   </component>
   <component name="WindowStateProjectService">
     <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1619006033642">
