@@ -47,6 +47,7 @@ public class main {
                 String iets = String.valueOf(leeg);
                 System.out.println(iets);
                 baseFunctions.speak(iets);
+                Thread.sleep(1000);
                 input = "";
             }
 
@@ -91,6 +92,7 @@ public class main {
                  * if this isn't done there is a chance the controller code might crash
                  * because it can't find the file.
                  */
+
                 case "songa":
                     //Change filepath when using a physical robot!
                     try {
