@@ -25,6 +25,7 @@ public class Main {
                         break;
                     case "weatherupdate":
                         System.out.println("WEATHER UPDATE");
+                        nao.jsonObject("Amsterdam");
                         break;
                     case "muziek1":
                         System.out.println("MALLE BABBE");
