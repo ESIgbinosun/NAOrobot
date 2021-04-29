@@ -4,7 +4,7 @@
  * Author: Diego Brandjes
  * Class: IT101
  * Date: 09-03-2021
- * Edit Date:  17-04-2021
+ * Edit Date:  21-04-2021
  */
 
 import com.aldebaran.qi.Application;
@@ -12,6 +12,7 @@ import com.aldebaran.qi.helper.proxies.*;
 
 import java.nio.ByteBuffer;
 import java.util.List;
+
 
 public class BaseFunctions {
 
@@ -81,27 +82,7 @@ public class BaseFunctions {
     //Stand2
     public void stand() throws Exception {
         ALRobotPosture robotPosture = new ALRobotPosture(this.application.session());
-
         robotPosture.goToPosture("Stand", 1.0f);
-
-//        async.goToPosture("Sit", 1.0f);
-//        async.goToPosture("Stand", 1.0f);
-//        async.goToPosture("Sit", 1.0f);
-//        async.goToPosture("Stand", 1.0f);
-//        async.goToPosture("Sit", 1.0f);
-//        Thread.interrupted();
-//        //async.call();
-//        System.out.println("run");
-//        asyncALMotion.killMove();
-//        asyncALMotion.killAll();
-//        System.out.println("stop");
-//        ALRobotPosture robotPosture = new ALRobotPosture(this.application.session());
-//        ALRobotPosture.AsyncALRobotPosture async = robotPosture.async();
-//        async.goToPosture("Stand", 1.0f);
-//        System.out.println("run");
-
-        //test
-        //robotPosture.stopMove();
     }
 
     //Speak
@@ -135,12 +116,15 @@ public class BaseFunctions {
     // play music
     public void play(String ID) throws Exception {
         ALAudioPlayer alAudioPlayer = new ALAudioPlayer(this.application.session());
-        alAudioPlayer.playFile(ID);
+        try {
+            alAudioPlayer.playFile(ID);
+        } catch (Exception e) {
+        }
         Thread.sleep(1000);
     }
 
     // kill music
-    public void stopPlaying(Integer ID) throws Exception{
+    public void stopPlaying(Integer ID) throws Exception {
         ALAudioPlayer alAudioPlayer = new ALAudioPlayer(this.application.session());
         alAudioPlayer.pause(ID);
     }
@@ -174,6 +158,8 @@ public class BaseFunctions {
 
     //Arm workout
     public void armWorkout(int rep) throws Exception {
+
+        stand();
 
         ALMotion alMotion = new ALMotion(this.application.session());
 

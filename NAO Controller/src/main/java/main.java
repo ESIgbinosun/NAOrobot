@@ -4,11 +4,10 @@
  * Author: Diego Brandjes
  * Class: IT101
  * Date: 09-03-2021
- * Edit Date:  17-04-2021
+ * Edit Date:  21-04-2021
  */
 
 public class main {
-
 
     public static void main(String[] args) throws Exception {
 
@@ -16,14 +15,18 @@ public class main {
         mqtt mqtt = new mqtt();
         BaseFunctions baseFunctions = new BaseFunctions();
 
-        //  ONE TIME ONLY, connectiong to NAO.
-        try {
-            // Change hostname when using a physical robot.
-            // "padrick.robot.hva-robots.nl"
-            baseFunctions.connect("localhost", 9559);
-            Thread.sleep(3000);
-        } catch (Exception e) {
-            System.out.println("Connection to NAO could not be made, to try again restart the code.");
+        while (true) {
+            //  ONE TIME ONLY, connecting to NAO.
+            try {
+                // Change hostname when using a physical robot.
+                // "padrick.robot.hva-robots.nl"
+                baseFunctions.connect("localhost", 9559);
+                Thread.sleep(2000);
+                break;
+            } catch (Exception e) {
+                System.out.println("Connection to NAO could not be made, Trying again in 5 seconds.");
+                Thread.sleep(5000);
+            }
         }
 
         // Endless loop checking for input from received messages Mqtt.java.
@@ -31,7 +34,7 @@ public class main {
 
             // Speak function directly from app, text to speech on NAO.
             String input = mqtt.readMsg().toLowerCase();
-            if (input.startsWith("speak")){
+            if (input.startsWith("speak")) {
 
                 char array[] = input.toCharArray();
                 char leeg[] = new char[array.length];
@@ -43,6 +46,7 @@ public class main {
                 String iets = String.valueOf(leeg);
                 System.out.println(iets);
                 baseFunctions.speak(iets);
+                Thread.sleep(1000);
                 input = "";
             }
 
@@ -58,7 +62,6 @@ public class main {
 
                     baseFunctions.armWorkout(4);
                     System.out.println("Armen workout uitgevoerd.");
-
                     break;
 
                 case "walk":
@@ -69,7 +72,6 @@ public class main {
                 case "layonback":
                     baseFunctions.layOnBack();
                     System.out.println("LayOnBack uitgevoerd.");
-
                     break;
 
                 case "stand":
@@ -87,28 +89,23 @@ public class main {
                  * if this isn't done there is a chance the controller code might crash
                  * because it can't find the file.
                  */
+
                 case "songa":
                     //Change filepath when using a physical robot!
-                    try {
-                        baseFunctions.play("C:\\Users\\Caprisun\\AppData\\Local\\Temp\\Untitledv86UUJY\\wavw.wav");
-                        System.out.println("Play uitgevoerd.");
-                    }finally {}
+                    baseFunctions.play("C:\\Users\\Caprisun\\AppData\\Local\\Temp\\Untitledv86UUJY\\wavw.wav");
+                    System.out.println("Play uitgevoerd.");
                     break;
 
                 case "songb":
                     //Change filepath when using a physical robot!
-                    try {
-                        baseFunctions.play("song2");
-                        System.out.println("Play2 uitgevoerd.");
-                    }finally {}
+                    baseFunctions.play("song2");
+                    System.out.println("Play2 uitgevoerd.");
                     break;
 
                 case "songc":
                     //Change filepath when using a physical robot!
-                    try {
-                        baseFunctions.play("song3");
-                        System.out.println("Play3 uitgevoerd.");
-                    }finally {}
+                    baseFunctions.play("song3");
+                    System.out.println("Play3 uitgevoerd.");
                     break;
 
                 case "pause":
