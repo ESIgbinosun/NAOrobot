@@ -291,4 +291,14 @@ public class NAO {
         alMotion.walkTo(x,y,theta);
         alTextToSpeech.say(tekst);
     }
+
+    // play music
+    public void play(String ID) throws Exception {
+        ALAudioPlayer alAudioPlayer = new ALAudioPlayer(this.application.session());
+        try {
+            alAudioPlayer.playFile(ID);
+        } catch (Exception e) {
+        }
+        Thread.sleep(1000);
+    }
 }

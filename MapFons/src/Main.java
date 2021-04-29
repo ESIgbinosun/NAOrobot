@@ -20,24 +20,27 @@ public class Main {
 
             try {
                 switch (mqtt.readMsg().toLowerCase()) {
+                    case "newsupdate":
+                        System.out.println("NEWS UPDATE");
                     case "muziek1":
                         System.out.println("MALLE BABBE");
-                        nao.Talk("test1");
-                        nao.ArmExercise(2);
-
+                        nao.play("C:\\Users\\fonsd\\AppData\\Local\\Temp\\UntitledRWjrJRM\\malleBabbe.wav");
                         break;
                     case "muziek2":
                         System.out.println("EEN EIGEN HUIS");
-                        nao.Talk("test2");
+                        nao.play("C:\\Users\\fonsd\\AppData\\Local\\Temp\\UntitledRWjrJRM\\eenEigenHuis");
                         break;
                     case "muziek3":
                         System.out.println("STIEKEM GEDANST");
+                        nao.play("C:\\Users\\fonsd\\AppData\\Local\\Temp\\UntitledRWjrJRM\\stiekemGedanst");
                         break;
                     case "muziek4":
                         System.out.println("LAND VAN MAAS EN WAAL");
+                        nao.play("C:\\Users\\fonsd\\AppData\\Local\\Temp\\UntitledRWjrJRM\\landVanMaasEnWaal");
                         break;
                     case "muziek5":
                         System.out.println("MET DE VLAM IN DE PIJP");
+                        nao.play("C:\\Users\\fonsd\\AppData\\Local\\Temp\\UntitledRWjrJRM\\metDeVlamInDePijp");
                         break;
                     case "armenoefening":
                         int aantalkeerArmen = 3;
