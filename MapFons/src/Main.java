@@ -22,6 +22,10 @@ public class Main {
                 switch (mqtt.readMsg().toLowerCase()) {
                     case "newsupdate":
                         System.out.println("NEWS UPDATE");
+                        break;
+                    case "weatherupdate":
+                        System.out.println("WEATHER UPDATE");
+                        break;
                     case "muziek1":
                         System.out.println("MALLE BABBE");
                         nao.play("C:\\Users\\fonsd\\AppData\\Local\\Temp\\UntitledRWjrJRM\\malleBabbe.wav");
