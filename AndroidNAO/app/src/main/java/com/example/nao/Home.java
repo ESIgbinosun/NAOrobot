@@ -75,6 +75,11 @@ public class Home extends AppCompatActivity {
         mqtt.publishMSG("benenworkout");
     }
 
+    public void weer (View v) throws Exception {
+        Intent i = new Intent(this, weer.class);
+        startActivity(i);
+    }
+
     public void stand (View v) throws Exception {
         mqtt.publishMSG("stand");
     }
