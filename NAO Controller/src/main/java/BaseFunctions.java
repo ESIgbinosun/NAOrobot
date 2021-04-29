@@ -81,7 +81,7 @@ public class BaseFunctions {
 
                 JSONObject obj = (JSONObject) data_obj.get("main");
                 speak("Het is " + obj.get("temp") + " graden in " + stad);
-                speak("Het voelt als " + obj.get("feels_like" + " graden in " + stad));
+                speak("Het voelt als " + obj.get("feels_like") + " graden in " + stad);
             }
 
         } catch (

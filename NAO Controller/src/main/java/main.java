@@ -114,11 +114,11 @@ public class main {
 
 
                     // Weather
-                case "weerAms":
+                case "amsterdam":
                     baseFunctions.jsonObject("Amsterdam");
                     break;
 
-                case "weerMaas":
+                case "maastricht":
                     baseFunctions.jsonObject("Maastricht");
                     break;
 
