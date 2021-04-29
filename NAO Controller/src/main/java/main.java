@@ -4,7 +4,7 @@
  * Author: Diego Brandjes
  * Class: IT101
  * Date: 09-03-2021
- * Edit Date:  21-04-2021
+ * Edit Date:  29-04-2021
  */
 
 public class main {
@@ -110,6 +110,16 @@ public class main {
 
                 case "pause":
                     baseFunctions.stopPlaying(1);
+                    break;
+
+
+                    // Weather
+                case "weerAms":
+                    baseFunctions.jsonObject("Amsterdam");
+                    break;
+
+                case "weerMaas":
+                    baseFunctions.jsonObject("Maastricht");
                     break;
 
 

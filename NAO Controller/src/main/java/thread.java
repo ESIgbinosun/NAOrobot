@@ -34,6 +34,16 @@ class One {
 
         thread.start(); // You may see this as starting a second Main, it wil run together with the original Main.
 
+        final Thread thread2 =  new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 5; i++) {
+                    System.out.println("C");
+                }
+            }
+        });
+        thread2.start();
+
         for (int i = 0; i < 5; i++) {
             System.out.println("A");
             Thread.sleep(100);
