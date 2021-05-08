@@ -23,6 +23,10 @@ public class Main {
                     case "workoutpage":
                         nao.Talk("Welkom op de workout pagina, kies de workout die u wilt doen");
                         break;
+                    case "newspage":
+                        nao.Talk("Welkom op de nieuws pagina, kies voor het nieuws dat u wilt horen");
+                        break;
+
                     case "newsupdate":
                         System.out.println("NEWS UPDATE");
                         break;
