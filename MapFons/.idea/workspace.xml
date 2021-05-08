@@ -63,6 +63,7 @@
       <updated>1619007818018</updated>
       <workItem from="1619007820059" duration="4544000" />
       <workItem from="1619693226411" duration="6347000" />
+      <workItem from="1620471156064" duration="386000" />
     </task>
     <task id="LOCAL-00001" summary="thread class en oefeningen met thread toegevoegd">
       <created>1619693280035</created>
@@ -99,7 +100,21 @@
       <option name="project" value="LOCAL" />
       <updated>1619700633707</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="workoutpage case aangemaakt">
+      <created>1620471437460</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1620471437460</updated>
+    </task>
+    <task id="LOCAL-00007" summary="newspage case aangemaakt">
+      <created>1620471528002</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1620471528002</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +137,8 @@
     <MESSAGE value="muziek mqtt messages toegevoegd" />
     <MESSAGE value="newsupdate en weatherupdate cases toegevoegd en voorbereid om het weer en een stukje nieuws op te halen van het internet" />
     <MESSAGE value="json methode gemaakt om het weer op te halen en nao het weer uit te laten spreken" />
-    <option name="LAST_COMMIT_MESSAGE" value="json methode gemaakt om het weer op te halen en nao het weer uit te laten spreken" />
+    <MESSAGE value="workoutpage case aangemaakt" />
+    <MESSAGE value="newspage case aangemaakt" />
+    <option name="LAST_COMMIT_MESSAGE" value="newspage case aangemaakt" />
   </component>
 </project>

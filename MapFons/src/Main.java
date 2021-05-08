@@ -26,7 +26,9 @@ public class Main {
                     case "newspage":
                         nao.Talk("Welkom op de nieuws pagina, kies voor het nieuws dat u wilt horen");
                         break;
-
+                    case "songpage":
+                        nao.Talk("Welkom op de zang pagina, kies voor het lied dat u wilt horen");
+                        break;
                     case "newsupdate":
                         System.out.println("NEWS UPDATE");
                         break;
