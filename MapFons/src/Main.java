@@ -20,6 +20,9 @@ public class Main {
 
             try {
                 switch (mqtt.readMsg().toLowerCase()) {
+                    case "workoutpage":
+                        nao.Talk("Welkom op de workout pagina, kies de workout die u wilt doen");
+                        break;
                     case "newsupdate":
                         System.out.println("NEWS UPDATE");
                         break;
