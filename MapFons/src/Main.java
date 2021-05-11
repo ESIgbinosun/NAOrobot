@@ -1,19 +1,21 @@
+import com.aldebaran.qi.helper.proxies.ALAudioPlayer;
+
 public class Main {
 
     public static void main(String[] args) throws Exception {
 
         Mqtt mqtt = new Mqtt();
         NAO nao = new NAO();
-        Multithread multithread = new Multithread();
-        Multithread multithread1 = new Multithread();
+        ALAudioPlayer alAudioPlayer = new ALAudioPlayer(NAO.getApplication().session());
         //Fysieke robots : hostname = "padrick.robot.hva-robots.nl" port = 9559
         nao.verbind("localhost",9559);
         Thread.sleep(5000);
+        Multithread t;
+        Multithread t2;
+        Multithread t3;
+        Multithread t4;
+        Multithread t5;
 
-
-
-        multithread.start();
-        multithread1.start();
         while (true){
             int reps;
 
@@ -38,23 +40,23 @@ public class Main {
                         break;
                     case "muziek1":
                         System.out.println("MALLE BABBE");
-                        nao.play("C:\\Users\\fonsd\\AppData\\Local\\Temp\\UntitledRWjrJRM\\malleBabbe.wav");
+                        t = new Multithread("mallebabbedirectory",0.5f,0f, alAudioPlayer);
                         break;
                     case "muziek2":
                         System.out.println("EEN EIGEN HUIS");
-                        nao.play("C:\\Users\\fonsd\\AppData\\Local\\Temp\\UntitledRWjrJRM\\eenEigenHuis");
+                        t2 = new Multithread("eeneigenhuisdirectory",0.5f,0f, alAudioPlayer);
                         break;
                     case "muziek3":
                         System.out.println("STIEKEM GEDANST");
-                        nao.play("C:\\Users\\fonsd\\AppData\\Local\\Temp\\UntitledRWjrJRM\\stiekemGedanst");
+                        t3 = new Multithread("stiekemgedanstdirectory",0.5f,0f, alAudioPlayer);
                         break;
                     case "muziek4":
                         System.out.println("LAND VAN MAAS EN WAAL");
-                        nao.play("C:\\Users\\fonsd\\AppData\\Local\\Temp\\UntitledRWjrJRM\\landVanMaasEnWaal");
+                        t4 = new Multithread("landvanmaasenwaaldirectory",0.5f,0f, alAudioPlayer);
                         break;
                     case "muziek5":
                         System.out.println("MET DE VLAM IN DE PIJP");
-                        nao.play("C:\\Users\\fonsd\\AppData\\Local\\Temp\\UntitledRWjrJRM\\metDeVlamInDePijp");
+                        t5 = new Multithread("metdevlamindepijpdirectory",0.5f,0f, alAudioPlayer);
                         break;
                     case "armenoefening":
                         int aantalkeerArmen = 3;

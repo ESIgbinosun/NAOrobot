@@ -13,7 +13,11 @@ import java.util.Collections;
 
 public class NAO {
     private String naam;
-    private Application application;
+    private static Application application;
+
+    public static Application getApplication() {
+        return application;
+    }
 
     public void verbind(String hostname, int port){
         String robotUrl = "tcp://" + hostname + ":" + port;

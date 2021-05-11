@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff74682b-6316-47e9-8fad-f15f2c23778d" name="Default Changelist" comment="json methode gemaakt om het weer op te halen en nao het weer uit te laten spreken">
+      <change afterPath="$PROJECT_DIR$/src/Multithread2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Multithread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Multithread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +41,23 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="MQTEst" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -64,6 +79,8 @@
       <workItem from="1619007820059" duration="4544000" />
       <workItem from="1619693226411" duration="6347000" />
       <workItem from="1620471156064" duration="386000" />
+      <workItem from="1620645392891" duration="37000" />
+      <workItem from="1620727778349" duration="3631000" />
     </task>
     <task id="LOCAL-00001" summary="thread class en oefeningen met thread toegevoegd">
       <created>1619693280035</created>
