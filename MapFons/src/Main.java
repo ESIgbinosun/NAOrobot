@@ -4,60 +4,86 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
+        //create mqtt, NAO object and audioplayer
         Mqtt mqtt = new Mqtt();
         NAO nao = new NAO();
+
+        //connect to the NAO robot, physical or virtual
+        nao.verbind("localhost",9559);
         ALAudioPlayer alAudioPlayer = new ALAudioPlayer(NAO.getApplication().session());
         //Fysieke robots : hostname = "padrick.robot.hva-robots.nl" port = 9559
-        nao.verbind("localhost",9559);
         Thread.sleep(5000);
+
+        //create different threads
         Multithread t;
         Multithread t2;
         Multithread t3;
         Multithread t4;
         Multithread t5;
+        Multithread2 t6;
 
+        //create a while loop so that the application can continue to receive mqtt messages from the android application
         while (true){
             int reps;
 
 
             try {
+                //switch case to read to mqtt message which is sent from the android app
                 switch (mqtt.readMsg().toLowerCase()) {
+                    //welcomes you to the workoutpage
                     case "workoutpage":
                         nao.Talk("Welkom op de workout pagina, kies de workout die u wilt doen");
                         break;
+                        //welcomes you to the newspage
                     case "newspage":
                         nao.Talk("Welkom op de nieuws pagina, kies voor het nieuws dat u wilt horen");
                         break;
+                        //welcomes you to th esongpage
                     case "songpage":
                         nao.Talk("Welkom op de zang pagina, kies voor het lied dat u wilt horen");
                         break;
+                        //this case lets NAO read out a news article
                     case "newsupdate":
                         System.out.println("NEWS UPDATE");
                         break;
+                        //this case lets NAO read out the current weather in a place of choice
                     case "weatherupdate":
                         System.out.println("WEATHER UPDATE");
                         nao.jsonObject("Amsterdam");
                         break;
+                        //this case plays audio and lets NAO move on "the beat"
                     case "muziek1":
                         System.out.println("MALLE BABBE");
-                        t = new Multithread("mallebabbedirectory",0.5f,0f, alAudioPlayer);
+                        t = new Multithread("C:\\Users\\fonsd\\Untitled\\malleBabbe.wav",0.5f,0f, alAudioPlayer);
+                        t.run();
+                        t6 = new Multithread2("MALLEBABBEDANS");
+                        t6.run();
                         break;
+                    //this case plays audio and lets NAO move on "the beat"
                     case "muziek2":
                         System.out.println("EEN EIGEN HUIS");
                         t2 = new Multithread("eeneigenhuisdirectory",0.5f,0f, alAudioPlayer);
+                        t2.run();
                         break;
+                    //this case plays audio and lets NAO move on "the beat"
                     case "muziek3":
                         System.out.println("STIEKEM GEDANST");
                         t3 = new Multithread("stiekemgedanstdirectory",0.5f,0f, alAudioPlayer);
+                        t3.run();
                         break;
+                    //this case plays audio and lets NAO move on "the beat"
                     case "muziek4":
                         System.out.println("LAND VAN MAAS EN WAAL");
                         t4 = new Multithread("landvanmaasenwaaldirectory",0.5f,0f, alAudioPlayer);
+                        t4.run();
                         break;
+                    //this case plays audio and lets NAO move on "the beat"
                     case "muziek5":
                         System.out.println("MET DE VLAM IN DE PIJP");
                         t5 = new Multithread("metdevlamindepijpdirectory",0.5f,0f, alAudioPlayer);
+                        t5.run();
                         break;
+                        //this case lets NAO do an upper body workout +- 10 minutes long
                     case "armenoefening":
                         int aantalkeerArmen = 3;
                         nao.Stand();
@@ -193,6 +219,7 @@ public class Main {
                         nao.Stand();
                         nao.Talk("Dit was de workout, bedankt voor de aandacht");
                         break;
+                        //this case lets NAO do a lower body workout +- 10 minutes
                     case "benenoefening":
                         reps = 12;
                         nao.Stand();
@@ -293,6 +320,7 @@ public class Main {
                         }
                         nao.Talk("Dit was het en dankjewel voor het actief meedoen met deze workout en tot de volgende keer");
                         break;
+                        //this is a test case for NAO to check if the workout buttons work
                     case "mixedoefening":
                         System.out.println("WORKING");
 

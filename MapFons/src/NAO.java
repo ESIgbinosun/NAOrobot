@@ -11,14 +11,16 @@ import org.json.simple.parser.JSONParser;
 import java.sql.Time;
 import java.util.Collections;
 
-public class NAO {
+public class NAO extends Thread{
     private String naam;
     private static Application application;
 
+    //get status of the application
     public static Application getApplication() {
         return application;
     }
 
+    //connect function to connect with the NAO robot, fill in the hostname and the port
     public void verbind(String hostname, int port){
         String robotUrl = "tcp://" + hostname + ":" + port;
         // Create a new application
@@ -27,31 +29,37 @@ public class NAO {
         application.start();
     }
 
+    //function to let the NAO robot stand
     public void StandInit() throws Exception {
         ALRobotPosture robotPosture = new ALRobotPosture(this.application.session());
         robotPosture.goToPosture("StandInit",1.0f);
     }
 
+    //function to let NAO robot sit down
     public void Sit() throws Exception {
         ALRobotPosture robotPosture = new ALRobotPosture(this.application.session());
         robotPosture.goToPosture("Sit",1.0f);
     }
 
+    //function to let NAO robot sit down in a relaxed form
     public void SitRelax() throws Exception {
         ALRobotPosture robotPosture = new ALRobotPosture(this.application.session());
         robotPosture.goToPosture("SitRelax",1.0f);
     }
 
+    //function to let the NAO robot lie down on his/her belly
     public void LyingBelly() throws Exception {
         ALRobotPosture robotPosture = new ALRobotPosture(this.application.session());
         robotPosture.goToPosture("LyingBelly",1.0f);
     }
 
+    //function to legt the NAO robot crouch
     public void Crouch() throws Exception {
         ALRobotPosture robotPosture = new ALRobotPosture(this.application.session());
         robotPosture.goToPosture("Crouch",1.0f);
     }
 
+    //function to let the NAO robot do a squat, fill in how many repetitions you want NAO to do
     public void Squat(int reps) throws Exception {
 
         for (int i = 0; i <reps ; i++) {
@@ -67,21 +75,25 @@ public class NAO {
         alRobotPosture.goToPosture("Stand",1.0f);
     }
 
+    //function to let the NAO robot lie on his/her back
     public void LyingBack() throws Exception {
         ALRobotPosture robotPosture = new ALRobotPosture(this.application.session());
         robotPosture.goToPosture("LyingBack",1.0f);
     }
 
+    //function to let the NAO robot stand
     public void Stand() throws Exception {
         ALRobotPosture robotPosture = new ALRobotPosture(this.application.session());
         robotPosture.goToPosture("Stand",1.0f);
     }
 
+    //function to let the NAO robot stand with his/her arms in front of him/her
     public void StandZero() throws Exception {
         ALRobotPosture robotPosture = new ALRobotPosture(this.application.session());
         robotPosture.goToPosture("StandZero",1.0f);
     }
 
+    //function to let the NAO robot speak a line of text, fill in the string that you want him/her to say
     public void Talk(String tekst) throws Exception {
         // Create an ALTextToSpeech object and link it to your current session
         ALTextToSpeech tts = new ALTextToSpeech(this.application.session());
@@ -89,87 +101,103 @@ public class NAO {
         tts.say(tekst);
     }
 
+    //function to position the NAO robot arms to the side
     public void ShouldersRoll() throws Exception {
         ALMotion alMotion = new ALMotion(this.application.session());
         alMotion.setAngles("LShoulderRoll",0,0.3f);
         alMotion.setAngles("RShoulderRoll",0,0.3f);
     }
 
+    //function to let the NAO robot put his/her arms down
     public void ArmsDown() throws Exception {
         ALMotion alMotion = new ALMotion(this.application.session());
         alMotion.setAngles("LShoulderPitch",1.5,0.3f);
         alMotion.setAngles("RShoulderPitch",1.5,0.3f);
     }
 
+    //function to let the NAO robot lift his/her arms up in front of him/her
     public void ArmsUp() throws Exception {
         ALMotion alMotion = new ALMotion(this.application.session());
         alMotion.setAngles("LShoulderPitch",-1,0.3f);
         alMotion.setAngles("RShoulderPitch",-1,0.3f);
     }
 
+    //function to let the NAO robot put the left arm down
     public void LShoulderPitch() throws Exception {
         ALMotion alMotion = new ALMotion(this.application.session());
         alMotion.setAngles("LShoulderPitch", -1, 0.3f);
     }
 
+    //function to let the NAO robot put the right arm down
     public void RShoulderPitch() throws Exception {
         ALMotion alMotion = new ALMotion(this.application.session());
         alMotion.setAngles("RShoulderPitch", -1, 0.3f);
     }
 
+    //function to let the NAO robot lift both arms up in front of him/her
     public void ArmsForward() throws Exception {
         ALMotion alMotion = new ALMotion(this.application.session());
         alMotion.setAngles("LShoulderPitch", 0, 0.3f);
         alMotion.setAngles("RShoulderPitch", 0, 0.3f);
     }
 
+    //function to let the NAO robot lift the right arm up in front of him/her
     public void RightArmForward() throws Exception {
         ALMotion alMotion = new ALMotion(this.application.session());
         alMotion.setAngles("RShoulderPitch", 0, 0.3f);
     }
 
+    //function to let the NAO robot lift the left arm up in front of him/her
     public void LeftArmForward() throws Exception {
         ALMotion alMotion = new ALMotion(this.application.session());
         alMotion.setAngles("LShoulderPitch", 0, 0.3f);
     }
 
+    //function to let the NAO robot lift his/her right arm up to the side
     public void RShoulderRoll() throws Exception {
         ALMotion alMotion = new ALMotion(this.application.session());
         alMotion.setAngles("RShoulderRoll", -1.2, 0.3f);
     }
 
+    //function to let the NAO robot lift his/her left arm up to the side
     public void LShoulderRoll() throws Exception {
         ALMotion alMotion = new ALMotion(this.application.session());
         alMotion.setAngles("LShoulderRoll", 1.2, 0.3f);
     }
 
+    //function to let the NAO robot lift both of his/her arms up to the side
     public void ArmsRoll() throws Exception {
         ALMotion alMotion = new ALMotion(this.application.session());
         alMotion.setAngles("RShoulderRoll", -1.2, 0.3f);
         alMotion.setAngles("LShoulderRoll", 1.2, 0.3f);
     }
 
+    //function to let the NAO robot bend his/her right elbow
     public void RElbowRoll() throws Exception {
         ALMotion alMotion = new ALMotion(this.application.session());
         alMotion.setAngles("RElbowRoll", 3, 0.3f);
     }
 
+    //function to let the NAO robot bend his/her left elbow
     public void LElbowRoll() throws Exception {
         ALMotion alMotion = new ALMotion(this.application.session());
         alMotion.setAngles("LElbowRoll", 3, 0.3f);
     }
 
+    //function to let the NAO robot bend both of his/her elbows
     public void ElbowRoll() throws Exception {
         ALMotion alMotion = new ALMotion(this.application.session());
         alMotion.setAngles("RElbowRoll", 3, 0.3f);
         alMotion.setAngles("LElbowRoll", 3, 0.3f);
     }
 
+    //function to let the NAO robot bend his hips
     public void RHipRoll() throws Exception {
         ALMotion alMotion = new ALMotion(this.application.session());
         alMotion.setAngles("RHipRoll", -1, 0.3f);
     }
 
+    //function to let the NAO robot spin his arms around, fill in how many repetitions NAO needs to do
     public void ArmExercise(int rep)throws Exception {
 
         ALMotion alMotion = new ALMotion(this.application.session());
@@ -203,6 +231,7 @@ public class NAO {
         Stand();
     }
 
+    //function to let the NAO robot walk in a certain direction
     public void Walk(float x, float y, float theta) throws Exception{
         ALMotion alMotion = new ALMotion(this.application.session());
 
@@ -211,6 +240,7 @@ public class NAO {
         alMotion.killWalk();
     }
 
+    //another function for the NAO robot to do a squat, fill in how many repetitions you want him/her to do
     public void SquatStefano(int reps) throws Exception {
         ALMotion alMotion = new ALMotion(this.application.session());
 
@@ -241,6 +271,7 @@ public class NAO {
         }
     }
 
+    //function to let the NAO robot open his/her arms and begin a pec fly
     public void armExerciseOpen() throws Exception{
         ALMotion alMotion = new ALMotion(this.application.session());
         alMotion.setAngles("RShoulderPitch", -0.01, 0.2f);
@@ -256,6 +287,7 @@ public class NAO {
 
     }
 
+    //function to let the NAO robot close his/her arms to finish a pec fly
     public void armExerciseClose() throws Exception{
         ALMotion alMotion = new ALMotion(this.application.session());
         alMotion.setAngles("RShoulderPitch", -0.01, 0.2f);
@@ -271,6 +303,7 @@ public class NAO {
 
     }
 
+    //function to let the NAO robot walk on its place, it does not work with a physical robot so do not try that
     public void WalkOnPlace(int reps) throws Exception {
 
         for (int i = 0; i < reps; i++) {
@@ -296,6 +329,7 @@ public class NAO {
         }
     }
 
+    //function to let the NAO robot talk and walk at the same time
     public void TalkAndWalk(float x, float y, float theta, String tekst) throws Exception{
         ALMotion alMotion = new ALMotion(this.application.session());
         ALTextToSpeech alTextToSpeech = new ALTextToSpeech(this.application.session());
@@ -303,7 +337,7 @@ public class NAO {
         alTextToSpeech.say(tekst);
     }
 
-    // play music
+    //function to let the NAO robot play music
     public void play(String ID) throws Exception {
         ALAudioPlayer alAudioPlayer = new ALAudioPlayer(this.application.session());
         try {
@@ -313,6 +347,7 @@ public class NAO {
         Thread.sleep(1000);
     }
 
+    //function to let the NAO robot say the current weather in a city of coice, fill in what city you want
     public void jsonObject(String stad) throws IOException {
 
 
