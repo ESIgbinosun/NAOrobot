@@ -7,7 +7,7 @@
  * Edit Date:  29-04-2021
  */
 
-public class main {
+public class main extends BaseFunctions {
 
     public static void main(String[] args) throws Exception {
 
@@ -50,6 +50,7 @@ public class main {
                 input = "";
             }
 
+
             switch (mqtt.readMsg().toLowerCase()) {
 
                 // testMsg, used for checking connection.
@@ -60,7 +61,7 @@ public class main {
 
                 case "oefeningarmen":
 
-                    baseFunctions.armWorkout(4);
+                    baseFunctions.armWorkout(2);
                     System.out.println("Armen workout uitgevoerd.");
                     break;
 
@@ -80,7 +81,7 @@ public class main {
                     break;
 
                 case "benenworkout":
-                    baseFunctions.legWorkout(5);
+                    baseFunctions.legWorkout(2);
                     System.out.println("Benen workout uitgevoerd.");
                     break;
 
@@ -89,6 +90,7 @@ public class main {
                  * if this isn't done there is a chance the controller code might crash
                  * because it can't find the file.
                  */
+
 
                 case "songa":
                     //Change filepath when using a physical robot!
@@ -113,7 +115,8 @@ public class main {
                     break;
 
 
-                    // Weather
+
+                // Weather
                 case "amsterdam":
                     baseFunctions.jsonObject("Amsterdam");
                     break;
