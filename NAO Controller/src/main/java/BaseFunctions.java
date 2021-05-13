@@ -4,7 +4,7 @@
  * Author: Diego Brandjes
  * Class: IT101
  * Date: 09-03-2021
- * Edit Date:  29-04-2021
+ * Edit Date:  13-05-2021
  */
 
 
@@ -19,9 +19,6 @@ import java.net.URL;
 import java.util.Scanner;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
-
-
 
 public class BaseFunctions {
 
@@ -46,7 +43,6 @@ public class BaseFunctions {
     }
 
     public void jsonObject(String stad) throws IOException {
-
 
         try {
 
@@ -90,7 +86,6 @@ public class BaseFunctions {
             e.printStackTrace();
         }
     }
-
 
     //sit
     public void sit() throws Exception {
@@ -244,9 +239,10 @@ public class BaseFunctions {
         stand();
     }
 
-    //Leg workout
-    public void legWorkout(int rep) throws Exception {
-        speak("Welkom bij deze workout, we beginnen met rustig lopen op onze plaats");
+    //Leg workout, this part makes the robot perform a task where it'll be
+    // speaking out the movements, it is repeated differently and continues for a while.
+    public void legWorkout(int rep,String username) throws Exception {
+        speak("Welkom " + username + " bij deze workout, we beginnen met rustig lopen op onze plaats");
         Thread.sleep(3000);
         march(5);
         speak("En stop maar met lopen");
@@ -346,7 +342,8 @@ public class BaseFunctions {
         speak("Dankjewel voor het actief meedoen met deze workout en tot de volgende keer");
     }
 
-    //March
+    //March, this part makes the robot walk in place. You can call the
+    // function and give the amount of times it should perform the task.
     public void march(int reps) throws Exception {
 
         for (int i = 0; i < reps; i++) {
@@ -371,7 +368,8 @@ public class BaseFunctions {
         }
     }
 
-    //Squat
+    //Squat, this part makes the robot perform the task of squatting, here
+    // you can also issue the amount if times it should be performed.
     public void squat(int reps) throws Exception {
 
         for (int i = 0; i < reps; i++) {
