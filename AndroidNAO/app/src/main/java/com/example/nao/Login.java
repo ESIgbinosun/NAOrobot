@@ -2,6 +2,7 @@
  * Login page view
  *
  * Date   17-04-2021
+ * Date edited 13-05-2021
  * Author Diego Brandjes
  */
 
@@ -16,10 +17,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.eclipse.paho.client.mqttv3.MqttClient;
+
 public class Login extends AppCompatActivity {
+
+
+
+    MqttClient client;
+    Mqtt mqtt = new Mqtt(client);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        mqtt.makeClient();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
     }
@@ -61,6 +71,8 @@ public class Login extends AppCompatActivity {
 
         Intent i = new Intent(this, Home.class);
         i.putExtra("KEY", usernaam);
+        mqtt.publishMSG("user"+ usernaam);
+
         startActivity(i);
     }
 }
