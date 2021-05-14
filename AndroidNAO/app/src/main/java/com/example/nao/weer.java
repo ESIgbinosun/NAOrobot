@@ -1,5 +1,5 @@
 /**
- * Login page view
+ * Weer page view
  *
  * Date   17-04-2021
  * Date edited 13-05-2021
@@ -9,18 +9,12 @@
 package com.example.nao;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import org.eclipse.paho.client.mqttv3.MqttClient;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
-import org.eclipse.paho.client.mqttv3.MqttClient;
-
-public class Login extends AppCompatActivity {
-
+public class weer extends AppCompatActivity {
 
 
     MqttClient client;
@@ -28,12 +22,12 @@ public class Login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         mqtt.makeClient();
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
-    }
 
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_weer);
+
+    }
     // Fullscreen
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
@@ -49,30 +43,16 @@ public class Login extends AppCompatActivity {
         }
     }
 
-    public void nameSafe (View v){
-
-        Button a = findViewById(R.id.button6);
-        EditText usernameEditText = (EditText) findViewById(R.id.naam);
-        String usernaam = usernameEditText.getText().toString();
-        if (usernaam.matches("")) {
-            Toast.makeText(this, "You did not enter a username", Toast.LENGTH_SHORT).show();
-            return;
-        }else if (usernaam.matches("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$")) {
-            a.setText("Thank you!");
-        }else {
-            Toast.makeText(this, "Please enter a normal username", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        a.postDelayed(new Runnable() {
-            @Override
-            public void run() {}
-        },3000);
-
+    public void back (View v) throws Exception {
         Intent i = new Intent(this, Home.class);
-        i.putExtra("KEY", usernaam);
-        mqtt.publishMSG("user"+ usernaam);
-
         startActivity(i);
+    }
+
+    public void amsterdam (View v) throws Exception {
+        mqtt.publishMSG("amsterdam");
+    }
+
+    public void maastricht (View v) throws Exception {
+        mqtt.publishMSG("maastricht");
     }
 }

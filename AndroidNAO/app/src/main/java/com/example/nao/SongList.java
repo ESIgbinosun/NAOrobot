@@ -1,7 +1,8 @@
 /**
- * Song List page view
+ * Song list page view
  *
  * Date   17-04-2021
+ * Date edited 13-05-2021
  * Author Diego Brandjes
  */
 

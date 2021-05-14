@@ -6,3 +6,7 @@ We tested this on a NAO robot from Softbank Robotics, other uses have not been t
 In order to use the main class you should have a running MQTT server to be able to receive function messages,
 this is normally done via the app. You should change the credentials to your own MQTT server.
 
+Currently there is no way to stop a running task, this is an ongoing issue with Multithreading, the only way to stop
+halfway a task is to kill the Java code on the PC.
+
+13-05-2021
