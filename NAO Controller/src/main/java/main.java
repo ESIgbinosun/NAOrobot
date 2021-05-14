@@ -115,7 +115,7 @@ public class main extends BaseFunctions {
                     break;
 
                 case "benenworkout":
-                    baseFunctions.legWorkout(2, username);
+                    baseFunctions.legWorkout(1, username);
                     System.out.println("Benen workout uitgevoerd.");
                     break;
 
@@ -127,18 +127,21 @@ public class main extends BaseFunctions {
 
                 case "songa":
                     //Change filepath when using a physical robot!
+                    baseFunctions.sitRelaxed();
                     baseFunctions.play("C:\\Users\\Caprisun\\AppData\\Local\\Temp\\Untitledv86UUJY\\wavw.wav");
                     System.out.println("Play uitgevoerd.");
                     break;
 
                 case "songb":
                     //Change filepath when using a physical robot!
+                    baseFunctions.sitRelaxed();
                     baseFunctions.play("song2");
                     System.out.println("Play2 uitgevoerd.");
                     break;
 
                 case "songc":
                     //Change filepath when using a physical robot!
+                    baseFunctions.sitRelaxed();
                     baseFunctions.play("song3");
                     System.out.println("Play3 uitgevoerd.");
                     break;
@@ -164,6 +167,7 @@ public class main extends BaseFunctions {
                     break;
 
                 default:
+
             }
         }
     }
