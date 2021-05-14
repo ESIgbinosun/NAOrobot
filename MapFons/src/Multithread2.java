@@ -1,10 +1,9 @@
 import com.aldebaran.qi.CallError;
 
-public class Multithread2 extends Thread{
+public class Multithread2 extends NAO implements Runnable{
     private Thread t;
     private final String threadName;
 
-    NAO nao = new NAO();
     public Multithread2( String name) {
         this.threadName = name;
 
@@ -12,9 +11,9 @@ public class Multithread2 extends Thread{
 
     public void run() {
         try {
-            nao.Squat(5);
-        } catch (Exception callerror) {
-            callerror.printStackTrace();
+            Squat(5);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

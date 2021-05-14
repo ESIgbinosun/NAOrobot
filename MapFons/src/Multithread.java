@@ -1,7 +1,7 @@
 import com.aldebaran.qi.CallError;
 import com.aldebaran.qi.helper.proxies.ALAudioPlayer;
 
-public class Multithread extends Thread{
+public class Multithread extends NAO implements Runnable{
     //variabeles to use as parameters in the multithread function
     private Thread t;
     private final String threadName;
