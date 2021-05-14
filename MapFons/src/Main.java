@@ -14,7 +14,7 @@ public class Main {
         //Fysieke robots : hostname = "padrick.robot.hva-robots.nl" port = 9559
         Thread.sleep(5000);
 
-        //create different threads
+        //create different thread objects
         Multithread t;
         Multithread t2;
         Multithread t3;

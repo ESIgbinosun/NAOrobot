@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff74682b-6316-47e9-8fad-f15f2c23778d" name="Default Changelist" comment="2e multithread class verwijdert, hebben we niet nodig">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="ff74682b-6316-47e9-8fad-f15f2c23778d" name="Default Changelist" comment="kleine workout gemaakt om bij de oplevering te laten zien">
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Multithread2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +69,7 @@
       <workItem from="1620727778349" duration="8507000" />
       <workItem from="1620742070520" duration="1846000" />
       <workItem from="1620810176787" duration="2926000" />
-      <workItem from="1620993455576" duration="1733000" />
+      <workItem from="1620993455576" duration="2678000" />
     </task>
     <task id="LOCAL-00001" summary="thread class en oefeningen met thread toegevoegd">
       <created>1619693280035</created>
@@ -163,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620994998824</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="kleine workout gemaakt om bij de oplevering te laten zien">
+      <created>1620995636762</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1620995636762</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +200,7 @@
     <MESSAGE value="multithread class aangepast zodat we muziek kunnen aanzetten" />
     <MESSAGE value="Weer update aangepast, haalt nu het correcte json object op" />
     <MESSAGE value="2e multithread class verwijdert, hebben we niet nodig" />
-    <option name="LAST_COMMIT_MESSAGE" value="2e multithread class verwijdert, hebben we niet nodig" />
+    <MESSAGE value="kleine workout gemaakt om bij de oplevering te laten zien" />
+    <option name="LAST_COMMIT_MESSAGE" value="kleine workout gemaakt om bij de oplevering te laten zien" />
   </component>
 </project>
