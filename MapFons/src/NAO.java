@@ -60,7 +60,7 @@ public class NAO extends Thread{
     }
 
     //function to let the NAO robot do a squat, fill in how many repetitions you want NAO to do
-    public void Squat(int reps) throws Exception {
+    public Runnable Squat(int reps) throws Exception {
 
         for (int i = 0; i <reps ; i++) {
 
@@ -73,6 +73,7 @@ public class NAO extends Thread{
         }
         ALRobotPosture alRobotPosture = new ALRobotPosture(this.application.session());
         alRobotPosture.goToPosture("Stand",1.0f);
+        return this.Squat(reps);
     }
 
     //function to let the NAO robot lie on his/her back
@@ -383,7 +384,7 @@ public class NAO extends Thread{
 
                 JSONObject obj = (JSONObject) data_obj.get("main");
                 Talk("Het is " + obj.get("temp") + " graden in " + stad);
-                Talk("Het voelt als " + obj.get("feels_like" + " graden in " + stad));
+                Talk("Het voelt als " + obj.get("feels_like") + " graden in " + stad);
             }
 
         } catch (
