@@ -7,7 +7,6 @@
  * Edit Date:  13-05-2021
  */
 
-
 import com.aldebaran.qi.Application;
 import com.aldebaran.qi.helper.proxies.*;
 

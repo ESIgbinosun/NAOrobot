@@ -10,7 +10,6 @@
 
 // Don't use for robot!
 
-
 class two implements Runnable
 {
     public void run() {
