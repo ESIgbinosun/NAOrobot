@@ -1,10 +1,7 @@
 import com.aldebaran.qi.Application;
 import com.aldebaran.qi.helper.proxies.ALMotion;
-import com.aldebaran.qi.helper.proxies.ALNavigation;
 import com.aldebaran.qi.helper.proxies.ALRobotPosture;
 import com.aldebaran.qi.helper.proxies.ALTextToSpeech;
-
-import java.security.AlgorithmConstraints;
 
 public class NAO {
     private String naam;
@@ -203,7 +200,7 @@ public class NAO {
         alMotion.killWalk();
     }
 
-    public void SquatStefano(int reps) throws Exception {
+   public Runnable SquatStefano(int reps) throws Exception {
         ALMotion alMotion = new ALMotion(this.application.session());
 
 
@@ -231,6 +228,7 @@ public class NAO {
             ALRobotPosture robotPosture = new ALRobotPosture(this.application.session());
             robotPosture.goToPosture("StandInit", 0.3f);
         }
+        return this.SquatStefano(reps);
     }
 
     public void armExerciseOpen() throws Exception {
@@ -316,5 +314,29 @@ public class NAO {
         }
 
     }
-    
+
+    static class MyThread extends Thread {
+
+        private Application application;
+
+        public void run(){
+
+
+            try {
+
+                    ALRobotPosture robotPosture = new ALRobotPosture(this.application.session());
+                    robotPosture.goToPosture("StandInit", 1.0f);
+
+                Thread.sleep(1000);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            System.out.println("Thread #1 is finished");
+
+
+        }
+
+    }
+
 }
+    

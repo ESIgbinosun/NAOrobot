@@ -7,7 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
+import org.eclipse.paho.client.mqttv3.MqttClient;
+
 public class ConversationActivity extends AppCompatActivity {
+
+    //make mqtt client
+    MqttClient client;
+    Mqtt mqtt = new Mqtt(client);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +21,13 @@ public class ConversationActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_conversation);
+        mqtt.makeClient();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 
     // Fullscreen
@@ -36,4 +49,9 @@ public class ConversationActivity extends AppCompatActivity {
         Intent main = new Intent(this, MainActivity.class);
         startActivity(main);
     }
+
+    public void NEWSUPDATE(View v){
+        mqtt.publishMSG("langef5","newsupdate");
+    }
+    public void WEATHERUPDATE(View v){ mqtt.publishMSG("langef5","weatherupdate"); }
 }

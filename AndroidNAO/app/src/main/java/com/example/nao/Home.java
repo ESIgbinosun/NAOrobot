@@ -2,6 +2,7 @@
  * Homepage view
  *
  * Date   17-04-2021
+ * Date edited 13-05-2021
  * Author Diego Brandjes
  */
 
@@ -85,8 +86,8 @@ public class Home extends AppCompatActivity {
     }
 
     public void speak (View v) throws Exception {
-        findViewById(R.id.invoer);
-        EditText speaka = (EditText) findViewById(R.id.invoer);
+        findViewById(R.id.naam2);
+        EditText speaka = (EditText) findViewById(R.id.naam2);
         String speak = ("speak" + speaka.getText().toString());
         mqtt.publishMSG(speak);
     }

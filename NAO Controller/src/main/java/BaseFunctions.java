@@ -4,7 +4,7 @@
  * Author: Diego Brandjes
  * Class: IT101
  * Date: 09-03-2021
- * Edit Date:  29-04-2021
+ * Edit Date:  13-05-2021
  */
 
 
@@ -20,13 +20,9 @@ import java.util.Scanner;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-
-
-
 public class BaseFunctions {
 
     public Application application;
-
     public ALRobotPosture.AsyncALRobotPosture async;
     public ALMotion.AsyncALMotion asyncALMotion;
 
@@ -48,17 +44,17 @@ public class BaseFunctions {
 
     public void jsonObject(String stad) throws IOException {
 
-
         try {
 
             // Specify API Url + city
             URL url = new URL("https://api.openweathermap.org/data/2.5/weather?appid=4c23483851e7e8992de00c00a866cdde&units=metric&q=" + stad);
 
+            // GET request and connecting
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.connect();
 
-            //Getting the response code
+            // Getting the response code
             int responsecode = conn.getResponseCode();
 
             if (responsecode != 200) {
@@ -74,11 +70,12 @@ public class BaseFunctions {
                 }
                 scanner.close();
 
-                //Using the JSON simple library parse the string into a json object
+                // Using the JSON simple library parse the string into a json object
                 JSONParser parse = new JSONParser();
                 JSONObject data_obj = (JSONObject) parse.parse(inline);
 
 
+                // JSON Data being spoken from "main"
                 JSONObject obj = (JSONObject) data_obj.get("main");
                 speak("Het is " + obj.get("temp") + " graden in " + stad);
                 speak("Het voelt als " + obj.get("feels_like") + " graden in " + stad);
@@ -89,7 +86,6 @@ public class BaseFunctions {
             e.printStackTrace();
         }
     }
-
 
     //sit
     public void sit() throws Exception {
@@ -243,11 +239,12 @@ public class BaseFunctions {
         stand();
     }
 
-    //Leg workout
-    public void legWorkout(int rep) throws Exception {
-        speak("Welkom bij deze workout, we beginnen met rustig lopen op onze plaats");
+    //Leg workout, this part makes the robot perform a task where it'll be
+    // speaking out the movements, it is repeated differently and continues for a while.
+    public void legWorkout(int rep,String username) throws Exception {
+        speak("Welkom " + username + " bij deze workout, we beginnen met rustig lopen op onze plaats");
         Thread.sleep(3000);
-        march(20);
+        march(5);
         speak("En stop maar met lopen");
         Thread.sleep(3000);
         speak("Nu gaan we drie stappen naar voren");
@@ -276,20 +273,20 @@ public class BaseFunctions {
         Thread.sleep(3000);
         speak("Nu gaan we weer lekker even lopen op de plaats");
         Thread.sleep(1000);
-        march(20);
+        march(5);
         Thread.sleep(1000);
         speak("Nu doen we de squat oefening op onze plaats zoals dit");
         Thread.sleep(1000);
         squat(1);
-        speak("Dit herhalen we tien keer");
+        speak("Dit herhalen we 5 keer");
         Thread.sleep(2000);
-        squat(10);
+        squat(5);
         Thread.sleep(2000);
         speak("Goed gedaan en dit alles herhalen we nog twee keer");
         Thread.sleep(1000);
         speak("We beginnen weer met rustig lopen op de plaats");
         Thread.sleep(2000);
-        march(20);
+        march(5);
         Thread.sleep(1000);
         speak("En we nemen weer drie stappen vooruit en daarna gaan we weer een squat doen");
         speak("dit gaan we " + rep + " keer herhalen");
@@ -308,11 +305,11 @@ public class BaseFunctions {
         Thread.sleep(2000);
         speak("En we gaan weer rustig lopen op de plaats");
         Thread.sleep(1000);
-        march(20);
+        march(5);
         Thread.sleep(1000);
         speak("Nu doen we de squat oefening weer tien keer op onze plaats");
         Thread.sleep(2000);
-        squat(10);
+        squat(5);
         Thread.sleep(1000);
         speak("Iedereen is lekker bezig, we herhalen dit nog een laatste keer, neem eerst maar 10 seconden rust");
         Thread.sleep(10000);
@@ -336,16 +333,17 @@ public class BaseFunctions {
         Thread.sleep(2000);
         speak("En we gaan weer op de plaats lopen");
         Thread.sleep(1000);
-        march(20);
+        march(5);
         Thread.sleep(1000);
-        speak("En we eindigen weer met tien maal de squat oefening op je plaats");
+        speak("En we eindigen weer met 5 maal de squat oefening op je plaats");
         Thread.sleep(2000);
-        squat(10);
+        squat(5);
         Thread.sleep(2000);
         speak("Dankjewel voor het actief meedoen met deze workout en tot de volgende keer");
     }
 
-    //March
+    //March, this part makes the robot walk in place. You can call the
+    // function and give the amount of times it should perform the task.
     public void march(int reps) throws Exception {
 
         for (int i = 0; i < reps; i++) {
@@ -370,7 +368,8 @@ public class BaseFunctions {
         }
     }
 
-    //Squat
+    //Squat, this part makes the robot perform the task of squatting, here
+    // you can also issue the amount if times it should be performed.
     public void squat(int reps) throws Exception {
 
         for (int i = 0; i < reps; i++) {
@@ -385,6 +384,5 @@ public class BaseFunctions {
         ALRobotPosture alRobotPosture = new ALRobotPosture(this.application.session());
         alRobotPosture.goToPosture("Stand", 1.0f);
     }
-
 }
 

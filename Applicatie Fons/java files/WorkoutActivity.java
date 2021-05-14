@@ -11,6 +11,7 @@ import org.eclipse.paho.client.mqttv3.MqttClient;
 
 public class WorkoutActivity extends AppCompatActivity {
 
+    //make mqtt client
     MqttClient client;
     Mqtt mqtt = new Mqtt(client);
 
@@ -49,10 +50,12 @@ public class WorkoutActivity extends AppCompatActivity {
     }
 
 
-
+    //function to start the leg workout
     public void WORKOUT1(View v){
         mqtt.publishMSG("langef5","benenoefening");
     }
+    //function to start the arm workout
     public void WORKOUT2(View v) { mqtt.publishMSG("langef5","armenoefening"); }
+    //function to start a test workout
     public void WORKOUT3(View v) { mqtt.publishMSG("langef5","oplevering"); }
 }

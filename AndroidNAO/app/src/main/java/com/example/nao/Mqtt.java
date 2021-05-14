@@ -58,6 +58,7 @@ public class Mqtt<IMessageCallback> extends AppCompatActivity {
 
             client.subscribe(SUBSCRIPTION, 1);
             client.publish(SUBSCRIPTION, "Connection established".getBytes(), 0, false);
+
         } catch (MqttException e) {
             System.out.println(e);
             Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();

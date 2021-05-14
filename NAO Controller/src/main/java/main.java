@@ -4,23 +4,37 @@
  * Author: Diego Brandjes
  * Class: IT101
  * Date: 09-03-2021
- * Edit Date:  29-04-2021
+ * Edit Date:  13-05-2021
  */
 
-public class main {
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class main extends BaseFunctions {
+
+
+    // Change hostname when using a physical robot.
+    // "padrick.robot.hva-robots.nl"
+    public static final String DATEFORMAT = "dd-MM-yyyy HH:mm:ss";
+    public static final String HOSTNAME = "localhost";
+    public static final int PORT = 9559;
+
+
 
     public static void main(String[] args) throws Exception {
+
+        // Function for getting the current date and time.
+        SimpleDateFormat format = new SimpleDateFormat(DATEFORMAT);
+        Date date = new Date();
 
         // Calling classes, used for MQTT functions & NAO functions.
         mqtt mqtt = new mqtt();
         BaseFunctions baseFunctions = new BaseFunctions();
 
+        //  Keeps trying to start connection with the NAO robot/Software.
         while (true) {
-            //  ONE TIME ONLY, connecting to NAO.
             try {
-                // Change hostname when using a physical robot.
-                // "padrick.robot.hva-robots.nl"
-                baseFunctions.connect("localhost", 9559);
+                baseFunctions.connect(HOSTNAME, PORT);
                 Thread.sleep(2000);
                 break;
             } catch (Exception e) {
@@ -28,12 +42,16 @@ public class main {
                 Thread.sleep(5000);
             }
         }
+        // Only shows when the connection with NAO has been made.
+        System.out.println("\nConnection has been made!\n" + "The current date is: " + format.format(date));
+
 
         // Endless loop checking for input from received messages Mqtt.java.
         while (true) {
 
             // Speak function directly from app, text to speech on NAO.
             String input = mqtt.readMsg().toLowerCase();
+            String username = "";
             if (input.startsWith("speak")) {
 
                 char array[] = input.toCharArray();
@@ -50,6 +68,24 @@ public class main {
                 input = "";
             }
 
+            // Getting username, MQTT is put into a string minus
+            // the topic value put before the message.
+            if (input.startsWith("user")){
+
+                char array[] = input.toCharArray();
+                char leeg[] = new char[array.length];
+
+                for (int i = 4; i < array.length; i++) {
+                    leeg[i] = array[i];
+                }
+
+                String iets = String.valueOf(leeg);
+                username = iets;
+                baseFunctions.speak("Hallo " + username);
+                Thread.sleep(1000);
+            }
+
+            // Main switch case, uses input from MQTT server to start tasks.
             switch (mqtt.readMsg().toLowerCase()) {
 
                 // testMsg, used for checking connection.
@@ -59,7 +95,6 @@ public class main {
                     break;
 
                 case "oefeningarmen":
-
                     baseFunctions.armWorkout(4);
                     System.out.println("Armen workout uitgevoerd.");
                     break;
@@ -80,7 +115,7 @@ public class main {
                     break;
 
                 case "benenworkout":
-                    baseFunctions.legWorkout(5);
+                    baseFunctions.legWorkout(2, username);
                     System.out.println("Benen workout uitgevoerd.");
                     break;
 
@@ -109,11 +144,17 @@ public class main {
                     break;
 
                 case "pause":
+                    //Currently not working because of MultiThread issues. Song will stop
+                    //when the song is finished.
                     baseFunctions.stopPlaying(1);
                     break;
 
+               /*
+                * Weather, You can issue a city here, it currently is hardcoded in to
+                * make it easier but it is possible to use different cities
+                * if they are supported by the API used.
+                */
 
-                    // Weather
                 case "amsterdam":
                     baseFunctions.jsonObject("Amsterdam");
                     break;
@@ -121,7 +162,6 @@ public class main {
                 case "maastricht":
                     baseFunctions.jsonObject("Maastricht");
                     break;
-
 
                 default:
             }
