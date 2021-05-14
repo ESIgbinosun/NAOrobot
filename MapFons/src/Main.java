@@ -31,8 +31,6 @@ public class Main {
             try {
                 //switch case to read to mqtt message which is sent from the android app
                 switch (mqtt.readMsg().toLowerCase()) {
-                    case "stopmusic":
-
                     //welcomes you to the workoutpage
                     case "workoutpage":
                         nao.Talk("Welkom op de workout pagina, kies de workout die u wilt doen");
@@ -58,8 +56,7 @@ public class Main {
                     case "muziek1":
                         System.out.println("MALLE BABBE");
                         nao.LyingBack();
-                        t = new Multithread("C:\\Users\\fonsd\\Untitled\\malleBabbe.wav",0.5f,0f, alAudioPlayer);
-                        t.start();
+                        t = new Multithread("C:\\Users\\fonsd\\Untitled\\malleBabbe.wav",0.3f,0f, alAudioPlayer);
                         t.run();
                         nao.Stand();
                         break;
@@ -67,7 +64,7 @@ public class Main {
                     case "muziek2":
                         System.out.println("EEN EIGEN HUIS");
                         nao.Sit();
-                        t2 = new Multithread("eeneigenhuisdirectory",0.5f,0f, alAudioPlayer);
+                        t2 = new Multithread("eeneigenhuisdirectory",0.3f,0f, alAudioPlayer);
                         t2.run();
                         nao.Stand();
                         break;
@@ -75,7 +72,7 @@ public class Main {
                     case "muziek3":
                         System.out.println("STIEKEM GEDANST");
                         nao.LyingBelly();
-                        t3 = new Multithread("stiekemgedanstdirectory",0.5f,0f, alAudioPlayer);
+                        t3 = new Multithread("stiekemgedanstdirectory",0.3f,0f, alAudioPlayer);
                         t3.run();
                         nao.Stand();
                         break;
@@ -83,7 +80,7 @@ public class Main {
                     case "muziek4":
                         System.out.println("LAND VAN MAAS EN WAAL");
                         nao.Crouch();
-                        t4 = new Multithread("landvanmaasenwaaldirectory",0.5f,0f, alAudioPlayer);
+                        t4 = new Multithread("landvanmaasenwaaldirectory",0.3f,0f, alAudioPlayer);
                         t4.run();
                         nao.Stand();
                         break;
@@ -91,7 +88,7 @@ public class Main {
                     case "muziek5":
                         System.out.println("MET DE VLAM IN DE PIJP");
                         nao.ArmsForward();
-                        t5 = new Multithread("metdevlamindepijpdirectory",0.5f,0f, alAudioPlayer);
+                        t5 = new Multithread("metdevlamindepijpdirectory",0.3f,0f, alAudioPlayer);
                         t5.run();
                         nao.Stand();
                         break;
@@ -332,15 +329,28 @@ public class Main {
                         }
                         nao.Talk("Dit was het en dankjewel voor het actief meedoen met deze workout en tot de volgende keer");
                         break;
-                        //this is a test case for NAO to check if the workout buttons work
+                        //this is a test case for NAO to show a small workout, fill in the for loop how often you
+                        //want NAO to do the showcase workout
                     case "mixedoefening":
                         System.out.println("WORKING");
-                        nao.Squat(2);
-                        nao.ArmExercise(3);
-                        nao.armExerciseOpen();
-                        nao.armExerciseClose();
-                        nao.armExerciseOpen();
-                        nao.armExerciseClose();
+                        for (int i = 0; i < 2; i++) {
+                            nao.Squat(2);
+                            Thread.sleep(3000);
+                            nao.Walk(0f, 1f, 0f);
+                            Thread.sleep(1000);
+                            nao.Walk(0f, -1f, 0f);
+                            Thread.sleep(3000);
+                            nao.ArmExercise(3);
+                            Thread.sleep(2000);
+                            nao.armExerciseOpen();
+                            Thread.sleep(1000);
+                            nao.armExerciseClose();
+                            Thread.sleep(1000);
+                            nao.armExerciseOpen();
+                            Thread.sleep(1000);
+                            nao.armExerciseClose();
+                            Thread.sleep(2000);
+                        }
                         break;
 
                 }
