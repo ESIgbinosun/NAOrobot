@@ -20,7 +20,7 @@ public class Main {
         Multithread t3;
         Multithread t4;
         Multithread t5;
-        Multithread2 t6;
+
 
 
         //create a while loop so that the application can continue to receive mqtt messages from the android application
@@ -31,6 +31,8 @@ public class Main {
             try {
                 //switch case to read to mqtt message which is sent from the android app
                 switch (mqtt.readMsg().toLowerCase()) {
+                    case "stopmusic":
+
                     //welcomes you to the workoutpage
                     case "workoutpage":
                         nao.Talk("Welkom op de workout pagina, kies de workout die u wilt doen");
