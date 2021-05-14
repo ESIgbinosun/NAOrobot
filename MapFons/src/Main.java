@@ -22,6 +22,7 @@ public class Main {
         Multithread t5;
         Multithread2 t6;
 
+
         //create a while loop so that the application can continue to receive mqtt messages from the android application
         while (true){
             int reps;
@@ -54,34 +55,43 @@ public class Main {
                         //this case plays audio and lets NAO move on "the beat"
                     case "muziek1":
                         System.out.println("MALLE BABBE");
+                        nao.LyingBack();
                         t = new Multithread("C:\\Users\\fonsd\\Untitled\\malleBabbe.wav",0.5f,0f, alAudioPlayer);
+                        t.start();
                         t.run();
-                        t6 = new Multithread2("MALLEBABBEDANS");
-                        t6.run();
+                        nao.Stand();
                         break;
                     //this case plays audio and lets NAO move on "the beat"
                     case "muziek2":
                         System.out.println("EEN EIGEN HUIS");
+                        nao.Sit();
                         t2 = new Multithread("eeneigenhuisdirectory",0.5f,0f, alAudioPlayer);
                         t2.run();
+                        nao.Stand();
                         break;
                     //this case plays audio and lets NAO move on "the beat"
                     case "muziek3":
                         System.out.println("STIEKEM GEDANST");
+                        nao.LyingBelly();
                         t3 = new Multithread("stiekemgedanstdirectory",0.5f,0f, alAudioPlayer);
                         t3.run();
+                        nao.Stand();
                         break;
                     //this case plays audio and lets NAO move on "the beat"
                     case "muziek4":
                         System.out.println("LAND VAN MAAS EN WAAL");
+                        nao.Crouch();
                         t4 = new Multithread("landvanmaasenwaaldirectory",0.5f,0f, alAudioPlayer);
                         t4.run();
+                        nao.Stand();
                         break;
                     //this case plays audio and lets NAO move on "the beat"
                     case "muziek5":
                         System.out.println("MET DE VLAM IN DE PIJP");
+                        nao.ArmsForward();
                         t5 = new Multithread("metdevlamindepijpdirectory",0.5f,0f, alAudioPlayer);
                         t5.run();
+                        nao.Stand();
                         break;
                         //this case lets NAO do an upper body workout +- 10 minutes long
                     case "armenoefening":
@@ -323,6 +333,13 @@ public class Main {
                         //this is a test case for NAO to check if the workout buttons work
                     case "mixedoefening":
                         System.out.println("WORKING");
+                        nao.Squat(2);
+                        nao.ArmExercise(3);
+                        nao.armExerciseOpen();
+                        nao.armExerciseClose();
+                        nao.armExerciseOpen();
+                        nao.armExerciseClose();
+                        break;
 
                 }
             } catch (InterruptedException e){

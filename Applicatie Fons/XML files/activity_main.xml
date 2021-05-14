@@ -53,7 +53,7 @@
         android:layout_width="238dp"
         android:layout_height="70dp"
         android:onClick="CONVERSATIONPAGE"
-        android:text="CONVERSATION"
+        android:text="NEWS UPDATE"
         app:backgroundTint="#F44336"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

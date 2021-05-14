@@ -5,15 +5,19 @@ public class Main {
         NAO nao = new NAO();
 
         nao.connect("localhost", 9559);
+        MyThread thread1 = new MyThread();
 
         nao.Stand();
+
+
+        thread1.start();
 //        nao.Talk("Welkom bij deze workout. De oefening van " +
 //                "vandaag gaat als volgt. We lopen naar voren, achter, links en rechts." +
 //                " en doen een squat tussendoor");
 //        Thread.sleep(500);
 //        nao.Talk("Zo ziet een squad er uit");
-        nao.birdFlying(10);
-
+//        nao.birdFlying(10);
+//
 
 //        Thread.sleep(1000);
 //        nao.SquatStefano(10);

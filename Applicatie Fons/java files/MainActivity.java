@@ -9,7 +9,13 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.content.Intent;
 
+import org.eclipse.paho.client.mqttv3.MqttClient;
+
 public class MainActivity extends AppCompatActivity {
+
+    //make mqtt client
+    MqttClient client;
+    Mqtt mqtt = new Mqtt(client);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +24,12 @@ public class MainActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+        mqtt.makeClient();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -36,23 +48,30 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //function to go to the about us activity
     public void ABOUTUSPAGE(View v){
         Intent aboutus = new Intent(this, AboutusActivity.class);
         startActivity(aboutus);
     }
 
+    //function to go to the workout activity
     public void WORKOUTPAGE(View v){
         Intent workout = new Intent(this, WorkoutActivity.class);
         startActivity(workout);
+        mqtt.publishMSG("langef5","workoutpage");
     }
 
+    //function to go to the conversation activity
     public void CONVERSATIONPAGE(View v){
         Intent conversation = new Intent(this, ConversationActivity.class);
         startActivity(conversation);
+        mqtt.publishMSG("langef5","newspage");
     }
 
+    //function to go to the song activity
     public void SONGPAGE(View v){
         Intent singasong = new Intent(this, SingasongActivity.class);
         startActivity(singasong);
+        mqtt.publishMSG("langef5","songpage");
     }
 }
