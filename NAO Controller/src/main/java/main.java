@@ -129,6 +129,7 @@ public class main extends BaseFunctions {
                     baseFunctions.sitRelaxed();
                     baseFunctions.play("C:\\Users\\Caprisun\\AppData\\Local\\Temp\\Untitledv86UUJY\\wavw.wav");
                     System.out.println("Play uitgevoerd.");
+                    baseFunctions.stand();
                     break;
 
                 case "songb":
@@ -136,6 +137,7 @@ public class main extends BaseFunctions {
                     baseFunctions.sitRelaxed();
                     baseFunctions.play("song2");
                     System.out.println("Play2 uitgevoerd.");
+                    baseFunctions.stand();
                     break;
 
                 case "songc":
@@ -143,6 +145,7 @@ public class main extends BaseFunctions {
                     baseFunctions.sitRelaxed();
                     baseFunctions.play("song3");
                     System.out.println("Play3 uitgevoerd.");
+                    baseFunctions.stand();
                     break;
 
                 case "pause":
