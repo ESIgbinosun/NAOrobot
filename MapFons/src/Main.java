@@ -9,7 +9,7 @@ public class Main {
         NAO nao = new NAO();
 
         //connect to the NAO robot, physical or virtual
-        nao.verbind("localhost",9559);
+        nao.verbind("169.254.29.204",9559);
         ALAudioPlayer alAudioPlayer = new ALAudioPlayer(NAO.getApplication().session());
         //Fysieke robots : hostname = "padrick.robot.hva-robots.nl" port = 9559
         Thread.sleep(5000);
@@ -39,7 +39,7 @@ public class Main {
                     case "newspage":
                         nao.Talk("Welkom op de nieuws pagina, kies voor het nieuws dat u wilt horen");
                         break;
-                        //welcomes you to th esongpage
+                        //welcomes you to the songpage
                     case "songpage":
                         nao.Talk("Welkom op de zang pagina, kies voor het lied dat u wilt horen");
                         break;
@@ -56,7 +56,8 @@ public class Main {
                     case "muziek1":
                         System.out.println("MALLE BABBE");
                         nao.LyingBack();
-                        t = new Multithread("C:\\Users\\fonsd\\Untitled\\malleBabbe.wav",0.3f,0f, alAudioPlayer);
+                        //voor PADrick:/home/nao/wav/langef5_1621336162.mp3/malleBabbe.mp3
+                        t = new Multithread("/home/nao/wav/langef5_1621338159.mp3",0.6f,0f, alAudioPlayer);
                         t.run();
                         nao.Stand();
                         break;
@@ -64,7 +65,8 @@ public class Main {
                     case "muziek2":
                         System.out.println("EEN EIGEN HUIS");
                         nao.Sit();
-                        t2 = new Multithread("eeneigenhuisdirectory",0.3f,0f, alAudioPlayer);
+                        //voor PADrick:/home/nao/wav/langef5_1621335608.mp3/eenEigenHuis (online-audio-converter.com).mp3
+                        t2 = new Multithread("/home/nao/wav/langef5_1621338169.mp3",0.6f,0f, alAudioPlayer);
                         t2.run();
                         nao.Stand();
                         break;
@@ -72,7 +74,8 @@ public class Main {
                     case "muziek3":
                         System.out.println("STIEKEM GEDANST");
                         nao.LyingBelly();
-                        t3 = new Multithread("stiekemgedanstdirectory",0.3f,0f, alAudioPlayer);
+                        //voor PADrick:/home/nao/wav/langef5_1621336146.mp3/stiekemGedanst.mp3
+                        t3 = new Multithread("/home/nao/wav/langef5_1621338137.mp3",0.6f,0f, alAudioPlayer);
                         t3.run();
                         nao.Stand();
                         break;
@@ -80,7 +83,8 @@ public class Main {
                     case "muziek4":
                         System.out.println("LAND VAN MAAS EN WAAL");
                         nao.Crouch();
-                        t4 = new Multithread("landvanmaasenwaaldirectory",0.3f,0f, alAudioPlayer);
+                        //voor PADrick:/home/nao/wav/langef5_1621335922.mp3/landVanMaasEnWaal (online-audio-converter.com).mp3
+                        t4 = new Multithread("/home/nao/wav/langef5_1621338149.mp3",0.6f,0f, alAudioPlayer);
                         t4.run();
                         nao.Stand();
                         break;
@@ -88,7 +92,8 @@ public class Main {
                     case "muziek5":
                         System.out.println("MET DE VLAM IN DE PIJP");
                         nao.ArmsForward();
-                        t5 = new Multithread("metdevlamindepijpdirectory",0.3f,0f, alAudioPlayer);
+                        //voor PADrick:/home/nao/wav/langef5_1621336125.mp3/metDeVlamInDePijp.mp3
+                        t5 = new Multithread("/home/nao/wav/langef5_1621338126.mp3",0.6f,0f, alAudioPlayer);
                         t5.run();
                         nao.Stand();
                         break;
@@ -331,14 +336,15 @@ public class Main {
                         break;
                         //this is a test case for NAO to show a small workout, fill in the for loop how often you
                         //want NAO to do the showcase workout
-                    case "mixedoefening":
+                    case "oplevering":
                         System.out.println("WORKING");
+                        nao.Stand();
                         for (int i = 0; i < 2; i++) {
                             nao.Squat(2);
                             Thread.sleep(3000);
-                            nao.Walk(0f, 1f, 0f);
+                            nao.Walk(1f, 0f, 0f);
                             Thread.sleep(1000);
-                            nao.Walk(0f, -1f, 0f);
+                            nao.Walk(-1f, 0f, 0f);
                             Thread.sleep(3000);
                             nao.ArmExercise(3);
                             Thread.sleep(2000);
