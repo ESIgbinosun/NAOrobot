@@ -383,7 +383,7 @@ public class NAO extends Thread{
 
                 JSONObject obj = (JSONObject) data_obj.get("main");
                 Talk("Het is " + obj.get("temp") + " graden in " + stad);
-                Talk("Het voelt als " + obj.get("feels_like" + " graden in " + stad));
+                Talk("Het voelt als " + obj.get("feels_like") + " graden in " + stad);
             }
 
         } catch (

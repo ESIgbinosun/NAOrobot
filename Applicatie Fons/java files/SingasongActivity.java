@@ -11,6 +11,7 @@ import org.eclipse.paho.client.mqttv3.MqttClient;
 
 public class SingasongActivity extends AppCompatActivity {
 
+    //make mqtt client
     MqttClient client;
     Mqtt mqtt = new Mqtt(client);
 
@@ -49,18 +50,23 @@ public class SingasongActivity extends AppCompatActivity {
         startActivity(main);
     }
 
+    //function to send mqtt message for a song
     public void SONG1(View v){
         mqtt.publishMSG("langef5","muziek1");
     }
+    //function to send mqtt message for a song
     public void SONG2(View v){
         mqtt.publishMSG("langef5","muziek2");
     }
+    //function to send mqtt message for a song
     public void SONG3(View v){
         mqtt.publishMSG("langef5","muziek3");
     }
+    //function to send mqtt message for a song
     public void SONG4(View v){
         mqtt.publishMSG("langef5","muziek4");
     }
+    //function to send mqtt message for a song
     public void SONG5(View v){
         mqtt.publishMSG("langef5","muziek5");
     }

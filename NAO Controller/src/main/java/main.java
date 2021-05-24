@@ -12,7 +12,6 @@ import java.util.Date;
 
 public class main extends BaseFunctions {
 
-
     // Change hostname when using a physical robot.
     // "padrick.robot.hva-robots.nl"
     public static final String DATEFORMAT = "dd-MM-yyyy HH:mm:ss";
@@ -115,7 +114,7 @@ public class main extends BaseFunctions {
                     break;
 
                 case "benenworkout":
-                    baseFunctions.legWorkout(2, username);
+                    baseFunctions.legWorkout(1, username);
                     System.out.println("Benen workout uitgevoerd.");
                     break;
 
@@ -127,27 +126,34 @@ public class main extends BaseFunctions {
 
                 case "songa":
                     //Change filepath when using a physical robot!
-                    baseFunctions.play("C:\\Users\\Caprisun\\AppData\\Local\\Temp\\Untitledv86UUJY\\wavw.wav");
+                    baseFunctions.sitRelaxed();
+                    baseFunctions.play("/home/nao/wav/langef5_1621338126.mp3");
                     System.out.println("Play uitgevoerd.");
+                    baseFunctions.stand();
                     break;
 
                 case "songb":
                     //Change filepath when using a physical robot!
-                    baseFunctions.play("song2");
+                    baseFunctions.sitRelaxed();
+                    baseFunctions.play("/home/nao/wav/langef5_1621338149.mp3");
                     System.out.println("Play2 uitgevoerd.");
+                    baseFunctions.stand();
                     break;
 
                 case "songc":
                     //Change filepath when using a physical robot!
-                    baseFunctions.play("song3");
+                    baseFunctions.sitRelaxed();
+                    baseFunctions.play("/home/nao/wav/langef5_1621338137.mp3");
                     System.out.println("Play3 uitgevoerd.");
+                    baseFunctions.stand();
                     break;
 
-                case "pause":
-                    //Currently not working because of MultiThread issues. Song will stop
-                    //when the song is finished.
-                    baseFunctions.stopPlaying(1);
-                    break;
+//              //Currently not working because of MultiThread issues. Song will stop
+//              //when the song is finished.
+//                case "pause":
+//
+//                    baseFunctions.stopPlaying(1);
+//                    break;
 
                /*
                 * Weather, You can issue a city here, it currently is hardcoded in to
@@ -164,6 +170,7 @@ public class main extends BaseFunctions {
                     break;
 
                 default:
+
             }
         }
     }

@@ -9,4 +9,4 @@ this is normally done via the app. You should change the credentials to your own
 Currently there is no way to stop a running task, this is an ongoing issue with Multithreading, the only way to stop
 halfway a task is to kill the Java code on the PC.
 
-13-05-2021
+14-05-2021

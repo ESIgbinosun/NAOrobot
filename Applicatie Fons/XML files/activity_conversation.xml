@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+    android:onClick="WEATHERUPDATE"
     tools:context=".ConversationActivity">
 
     <Button
@@ -12,7 +13,8 @@
         android:layout_width="238dp"
         android:layout_height="70dp"
         android:layout_marginTop="636dp"
-        android:text="START"
+        android:onClick="NEWSUPDATE"
+        android:text="CLICK FOR A NEWS UPDATE"
         app:backgroundTint="#F44336"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -51,5 +53,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logonao" />
+
+    <Button
+        android:id="@+id/button18"
+        android:layout_width="238dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="100dp"
+        android:text="CLICK FOR A WEATHER UPDATE"
+        app:backgroundTint="#F44336"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

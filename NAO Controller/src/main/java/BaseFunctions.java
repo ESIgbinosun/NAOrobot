@@ -7,7 +7,6 @@
  * Edit Date:  13-05-2021
  */
 
-
 import com.aldebaran.qi.Application;
 import com.aldebaran.qi.helper.proxies.*;
 
@@ -240,11 +239,10 @@ public class BaseFunctions {
     }
 
     //Leg workout, this part makes the robot perform a task where it'll be
-    // speaking out the movements, it is repeated differently and continues for a while.
-    public void legWorkout(int rep,String username) throws Exception {
+    // speaking out the movements, runtime 1.5 minutes.
+    public void legWorkout(int rep, String username) throws Exception {
         speak("Welkom " + username + " bij deze workout, we beginnen met rustig lopen op onze plaats");
         Thread.sleep(3000);
-        march(5);
         speak("En stop maar met lopen");
         Thread.sleep(3000);
         speak("Nu gaan we drie stappen naar voren");
@@ -273,100 +271,16 @@ public class BaseFunctions {
         Thread.sleep(3000);
         speak("Nu gaan we weer lekker even lopen op de plaats");
         Thread.sleep(1000);
-        march(5);
-        Thread.sleep(1000);
         speak("Nu doen we de squat oefening op onze plaats zoals dit");
         Thread.sleep(1000);
         squat(1);
-        speak("Dit herhalen we 5 keer");
+        speak("Dit herhalen we 1 keer");
         Thread.sleep(2000);
-        squat(5);
-        Thread.sleep(2000);
-        speak("Goed gedaan en dit alles herhalen we nog twee keer");
-        Thread.sleep(1000);
-        speak("We beginnen weer met rustig lopen op de plaats");
-        Thread.sleep(2000);
-        march(5);
-        Thread.sleep(1000);
-        speak("En we nemen weer drie stappen vooruit en daarna gaan we weer een squat doen");
-        speak("dit gaan we " + rep + " keer herhalen");
-
-        Thread.sleep(2000);
-
-        for (int j = 0; j < rep; j++) {
-            Thread.sleep(1000);
-            walk(0.1f, 0f, 0f);
-            Thread.sleep(2000);
-            squat(1);
-            Thread.sleep(500);
-            walk(-0.1f, 0f, 0f);
-        }
-
-        Thread.sleep(2000);
-        speak("En we gaan weer rustig lopen op de plaats");
-        Thread.sleep(1000);
-        march(5);
-        Thread.sleep(1000);
-        speak("Nu doen we de squat oefening weer tien keer op onze plaats");
-        Thread.sleep(2000);
-        squat(5);
-        Thread.sleep(1000);
-        speak("Iedereen is lekker bezig, we herhalen dit nog een laatste keer, neem eerst maar 10 seconden rust");
-        Thread.sleep(10000);
-        speak("En begin maar weer met marcheren op de plaats");
-        Thread.sleep(20);
-        Thread.sleep(1000);
-        speak("En we gaan weer drie stappen vooruit nemen, waarna we weer in de squatpositie gaan");
-        Thread.sleep(1000);
-        speak("Dit herhalen we weer " + rep + " keer");
-
-        Thread.sleep(2000);
-
-        for (int k = 0; k < rep; k++) {
-            Thread.sleep(1000);
-            walk(0.1f, 0f, 0f);
-            Thread.sleep(2000);
-            squat(1);
-            Thread.sleep(500);
-            walk(-0.1f, 0f, 0f);
-        }
-        Thread.sleep(2000);
-        speak("En we gaan weer op de plaats lopen");
-        Thread.sleep(1000);
-        march(5);
-        Thread.sleep(1000);
-        speak("En we eindigen weer met 5 maal de squat oefening op je plaats");
-        Thread.sleep(2000);
-        squat(5);
+        squat(1);
         Thread.sleep(2000);
         speak("Dankjewel voor het actief meedoen met deze workout en tot de volgende keer");
     }
 
-    //March, this part makes the robot walk in place. You can call the
-    // function and give the amount of times it should perform the task.
-    public void march(int reps) throws Exception {
-
-        for (int i = 0; i < reps; i++) {
-
-            ALRobotPosture robotPosture = new ALRobotPosture(this.application.session());
-            ALMotion alMotion = new ALMotion(this.application.session());
-            alMotion.setAngles("RHipPitch", -1.5, 0.5f);
-            alMotion.setAngles("RKneePitch", 1.7, 0.5f);
-            alMotion.setAngles("LShoulderPitch", 0.5, 0.6f);
-            alMotion.setAngles("RShoulderPitch", 2, 0.6f);
-
-
-            robotPosture.goToPosture("StandInit", 0.5f);
-
-            alMotion.setAngles("LHipPitch", -1.5, 0.5f);
-            alMotion.setAngles("LKneePitch", 1.7, 0.5f);
-            alMotion.setAngles("RShoulderPitch", 0.5, 0.6f);
-            alMotion.setAngles("LShoulderPitch", 2, 0.6f);
-
-
-            robotPosture.goToPosture("StandInit", 0.5f);
-        }
-    }
 
     //Squat, this part makes the robot perform the task of squatting, here
     // you can also issue the amount if times it should be performed.

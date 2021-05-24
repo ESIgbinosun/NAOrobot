@@ -34,6 +34,7 @@ public class AboutusActivity extends AppCompatActivity {
         }
     }
 
+    //function to go back to the previous activity
     public void BACK(View v){
         Intent main = new Intent(this, MainActivity.class);
         startActivity(main);

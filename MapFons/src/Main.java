@@ -9,18 +9,19 @@ public class Main {
         NAO nao = new NAO();
 
         //connect to the NAO robot, physical or virtual
-        nao.verbind("localhost",9559);
+        nao.verbind("169.254.29.204",9559);
         ALAudioPlayer alAudioPlayer = new ALAudioPlayer(NAO.getApplication().session());
         //Fysieke robots : hostname = "padrick.robot.hva-robots.nl" port = 9559
         Thread.sleep(5000);
 
-        //create different threads
+        //create different thread objects
         Multithread t;
         Multithread t2;
         Multithread t3;
         Multithread t4;
         Multithread t5;
-        Multithread2 t6;
+
+
 
         //create a while loop so that the application can continue to receive mqtt messages from the android application
         while (true){
@@ -38,7 +39,7 @@ public class Main {
                     case "newspage":
                         nao.Talk("Welkom op de nieuws pagina, kies voor het nieuws dat u wilt horen");
                         break;
-                        //welcomes you to th esongpage
+                        //welcomes you to the songpage
                     case "songpage":
                         nao.Talk("Welkom op de zang pagina, kies voor het lied dat u wilt horen");
                         break;
@@ -54,34 +55,47 @@ public class Main {
                         //this case plays audio and lets NAO move on "the beat"
                     case "muziek1":
                         System.out.println("MALLE BABBE");
-                        t = new Multithread("C:\\Users\\fonsd\\Untitled\\malleBabbe.wav",0.5f,0f, alAudioPlayer);
+                        nao.LyingBack();
+                        //voor PADrick:/home/nao/wav/langef5_1621336162.mp3/malleBabbe.mp3
+                        t = new Multithread("/home/nao/wav/langef5_1621338159.mp3",0.6f,0f, alAudioPlayer);
                         t.run();
-                        t6 = new Multithread2("MALLEBABBEDANS");
-                        t6.run();
+                        nao.Stand();
                         break;
                     //this case plays audio and lets NAO move on "the beat"
                     case "muziek2":
                         System.out.println("EEN EIGEN HUIS");
-                        t2 = new Multithread("eeneigenhuisdirectory",0.5f,0f, alAudioPlayer);
+                        nao.Sit();
+                        //voor PADrick:/home/nao/wav/langef5_1621335608.mp3/eenEigenHuis (online-audio-converter.com).mp3
+                        t2 = new Multithread("/home/nao/wav/langef5_1621338169.mp3",0.6f,0f, alAudioPlayer);
                         t2.run();
+                        nao.Stand();
                         break;
                     //this case plays audio and lets NAO move on "the beat"
                     case "muziek3":
                         System.out.println("STIEKEM GEDANST");
-                        t3 = new Multithread("stiekemgedanstdirectory",0.5f,0f, alAudioPlayer);
+                        nao.LyingBelly();
+                        //voor PADrick:/home/nao/wav/langef5_1621336146.mp3/stiekemGedanst.mp3
+                        t3 = new Multithread("/home/nao/wav/langef5_1621338137.mp3",0.6f,0f, alAudioPlayer);
                         t3.run();
+                        nao.Stand();
                         break;
                     //this case plays audio and lets NAO move on "the beat"
                     case "muziek4":
                         System.out.println("LAND VAN MAAS EN WAAL");
-                        t4 = new Multithread("landvanmaasenwaaldirectory",0.5f,0f, alAudioPlayer);
+                        nao.Crouch();
+                        //voor PADrick:/home/nao/wav/langef5_1621335922.mp3/landVanMaasEnWaal (online-audio-converter.com).mp3
+                        t4 = new Multithread("/home/nao/wav/langef5_1621338149.mp3",0.6f,0f, alAudioPlayer);
                         t4.run();
+                        nao.Stand();
                         break;
                     //this case plays audio and lets NAO move on "the beat"
                     case "muziek5":
                         System.out.println("MET DE VLAM IN DE PIJP");
-                        t5 = new Multithread("metdevlamindepijpdirectory",0.5f,0f, alAudioPlayer);
+                        nao.ArmsForward();
+                        //voor PADrick:/home/nao/wav/langef5_1621336125.mp3/metDeVlamInDePijp.mp3
+                        t5 = new Multithread("/home/nao/wav/langef5_1621338126.mp3",0.6f,0f, alAudioPlayer);
                         t5.run();
+                        nao.Stand();
                         break;
                         //this case lets NAO do an upper body workout +- 10 minutes long
                     case "armenoefening":
@@ -320,9 +334,30 @@ public class Main {
                         }
                         nao.Talk("Dit was het en dankjewel voor het actief meedoen met deze workout en tot de volgende keer");
                         break;
-                        //this is a test case for NAO to check if the workout buttons work
-                    case "mixedoefening":
+                        //this is a test case for NAO to show a small workout, fill in the for loop how often you
+                        //want NAO to do the showcase workout
+                    case "oplevering":
                         System.out.println("WORKING");
+                        nao.Stand();
+                        for (int i = 0; i < 2; i++) {
+                            nao.Squat(2);
+                            Thread.sleep(3000);
+                            nao.Walk(1f, 0f, 0f);
+                            Thread.sleep(1000);
+                            nao.Walk(-1f, 0f, 0f);
+                            Thread.sleep(3000);
+                            nao.ArmExercise(3);
+                            Thread.sleep(2000);
+                            nao.armExerciseOpen();
+                            Thread.sleep(1000);
+                            nao.armExerciseClose();
+                            Thread.sleep(1000);
+                            nao.armExerciseOpen();
+                            Thread.sleep(1000);
+                            nao.armExerciseClose();
+                            Thread.sleep(2000);
+                        }
+                        break;
 
                 }
             } catch (InterruptedException e){

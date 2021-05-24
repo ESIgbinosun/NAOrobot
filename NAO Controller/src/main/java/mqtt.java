@@ -4,7 +4,8 @@
  * Author: Diego Brandjes
  * Class: IT101
  * Date: 09-03-2021
- * Edit Date:  17-04-2021
+ * Edit Date:  14-05-2021
+ * FINAL
  */
 
 import org.eclipse.paho.client.mqttv3.*;
@@ -20,6 +21,7 @@ public class mqtt {
     private static final String PASSWORD = "qVlPNohG5wWSUwfBi9Xz";
     MemoryPersistence persistence = new MemoryPersistence();
     String msg = "";
+
 
     // Connecting to server
     mqtt() {
