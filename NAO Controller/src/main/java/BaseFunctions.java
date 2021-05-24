@@ -240,10 +240,9 @@ public class BaseFunctions {
 
     //Leg workout, this part makes the robot perform a task where it'll be
     // speaking out the movements, runtime 1.5 minutes.
-    public void legWorkout(int rep,String username) throws Exception {
+    public void legWorkout(int rep, String username) throws Exception {
         speak("Welkom " + username + " bij deze workout, we beginnen met rustig lopen op onze plaats");
         Thread.sleep(3000);
-        march(1);
         speak("En stop maar met lopen");
         Thread.sleep(3000);
         speak("Nu gaan we drie stappen naar voren");
@@ -272,8 +271,6 @@ public class BaseFunctions {
         Thread.sleep(3000);
         speak("Nu gaan we weer lekker even lopen op de plaats");
         Thread.sleep(1000);
-        march(1);
-        Thread.sleep(1000);
         speak("Nu doen we de squat oefening op onze plaats zoals dit");
         Thread.sleep(1000);
         squat(1);
@@ -284,31 +281,6 @@ public class BaseFunctions {
         speak("Dankjewel voor het actief meedoen met deze workout en tot de volgende keer");
     }
 
-    //March, this part makes the robot walk in place. You can call the
-    // function and give the amount of times it should perform the task.
-    public void march(int reps) throws Exception {
-
-        for (int i = 0; i < reps; i++) {
-
-            ALRobotPosture robotPosture = new ALRobotPosture(this.application.session());
-            ALMotion alMotion = new ALMotion(this.application.session());
-            alMotion.setAngles("RHipPitch", -1.5, 0.5f);
-            alMotion.setAngles("RKneePitch", 1.7, 0.5f);
-            alMotion.setAngles("LShoulderPitch", 0.5, 0.6f);
-            alMotion.setAngles("RShoulderPitch", 2, 0.6f);
-
-
-            robotPosture.goToPosture("StandInit", 0.5f);
-
-            alMotion.setAngles("LHipPitch", -1.5, 0.5f);
-            alMotion.setAngles("LKneePitch", 1.7, 0.5f);
-            alMotion.setAngles("RShoulderPitch", 0.5, 0.6f);
-            alMotion.setAngles("LShoulderPitch", 2, 0.6f);
-
-
-            robotPosture.goToPosture("StandInit", 0.5f);
-        }
-    }
 
     //Squat, this part makes the robot perform the task of squatting, here
     // you can also issue the amount if times it should be performed.
