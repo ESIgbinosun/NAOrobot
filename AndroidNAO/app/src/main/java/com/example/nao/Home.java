@@ -2,7 +2,7 @@
  * Homepage view
  *
  * Date   17-04-2021
- * Date edited 13-05-2021
+ * Date edited 25-05-2021
  * Author Diego Brandjes
  */
 
@@ -37,6 +37,9 @@ public class Home extends AppCompatActivity {
             String upperString = usernaam.substring(0, 1).toUpperCase() + usernaam.substring(1).toLowerCase();
 
             welkom.setText("Hallo " + upperString);
+        }else{
+            TextView welkom = findViewById(R.id.showNaam);
+            welkom.setText("Hallo!");
         }
     }
     // Fullscreen
@@ -85,11 +88,12 @@ public class Home extends AppCompatActivity {
         mqtt.publishMSG("stand");
     }
 
-    public void speak (View v) throws Exception {
-        findViewById(R.id.naam2);
-        EditText speaka = (EditText) findViewById(R.id.naam2);
-        String speak = ("speak" + speaka.getText().toString());
-        mqtt.publishMSG(speak);
-    }
+// Edited out, non used function in our version, enables user input.
+//    public void speak (View v) throws Exception {
+//        findViewById(R.id.naam2);
+//        EditText speaka = (EditText) findViewById(R.id.naam2);
+//        String speak = ("speak" + speaka.getText().toString());
+//        mqtt.publishMSG(speak);
+//    }
 
 }

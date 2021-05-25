@@ -2,6 +2,7 @@
  * Start page view
  *
  * Date   17-04-2021
+ * Date edited 25-05-2021
  * Author Diego Brandjes
  */
 
@@ -53,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void launchHome(View v) {
 
-        Intent i = new Intent(this, Login.class);
+        //removed Login intent for usability with elderly.
+        Intent i = new Intent(this, Home.class);
         startActivity(i);
     }
 }
