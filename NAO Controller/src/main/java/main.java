@@ -128,7 +128,7 @@ public class main extends BaseFunctions {
                     //Change filepath when using a physical robot!
                     baseFunctions.singerPose();
                     baseFunctions.play("/home/nao/wav/langef5_1621338126.mp3");
-                    System.out.println("Play uitgevoerd.");
+                    System.out.println("Play uitgevoerd. Met de vlam in de pijp");
                     baseFunctions.stand();
                     break;
 
@@ -136,7 +136,7 @@ public class main extends BaseFunctions {
                     //Change filepath when using a physical robot!
                     baseFunctions.sitRelaxed();
                     baseFunctions.play("/home/nao/wav/langef5_1621338149.mp3");
-                    System.out.println("Play2 uitgevoerd.");
+                    System.out.println("Play2 uitgevoerd. Land van Maas en Waal");
                     baseFunctions.stand();
                     break;
 
@@ -144,7 +144,7 @@ public class main extends BaseFunctions {
                     //Change filepath when using a physical robot!
                     baseFunctions.sitRelaxed();
                     baseFunctions.play("/home/nao/wav/langef5_1621338137.mp3");
-                    System.out.println("Play3 uitgevoerd.");
+                    System.out.println("Play3 uitgevoerd. Stiekem Gedanst");
                     baseFunctions.stand();
                     break;
 
