@@ -9,20 +9,18 @@
     android:screenOrientation="portrait"
     tools:context=".weer">
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="421dp"
-        android:layout_height="244dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="500dp"
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView2"
+        android:layout_width="476dp"
+        android:layout_height="153dp"
+        android:src="@drawable/cloud"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.391"
-        app:srcCompat="@drawable/naobanner" />
+        app:layout_constraintVertical_bias="0.299"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button13"
@@ -86,13 +84,43 @@
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="198dp"
-        android:layout_height="203dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="214dp"
+        android:layout_height="104dp"
+        android:layout_marginBottom="52dp"
+        android:rotation="-90"
+        android:rotationX="0"
+        app:layout_constraintBottom_toTopOf="@+id/gifImageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/kleur" />
+
+    <ImageView
+        android:id="@+id/imageView72"
+        android:layout_width="214dp"
+        android:layout_height="104dp"
+        android:rotation="-90"
+        android:rotationX="0"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:srcCompat="@drawable/kleur" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="380dp"
+        android:layout_height="197dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="500dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.295"
-        app:srcCompat="@drawable/weer" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/naobanner" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

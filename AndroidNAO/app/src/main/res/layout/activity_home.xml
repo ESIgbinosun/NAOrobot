@@ -52,7 +52,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button5"
-        app:layout_constraintVertical_bias="0.049"
+        app:layout_constraintVertical_bias="0.04"
         app:rippleColor="#000000" />
 
     <Button
@@ -76,6 +76,33 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.33"
         app:rippleColor="#000000" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="418dp"
+        android:layout_height="126dp"
+        android:layout_marginTop="248dp"
+        android:src="@drawable/mmm"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.724"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="214dp"
+        android:layout_height="104dp"
+        android:layout_marginBottom="64dp"
+        android:rotation="-90"
+        android:rotationX="0"
+        app:layout_constraintBottom_toTopOf="@+id/gifImageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/kleur" />
+
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -161,7 +188,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
-        android:text="NAO App Version 10.1"
+        android:text="NAO App Version 10.2"
         android:textColor="#535353"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

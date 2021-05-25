@@ -2,7 +2,7 @@
  * Start page view
  *
  * Date   17-04-2021
- * Date edited 25-05-2021
+ * Date edited 26-05-2021
  * Author Diego Brandjes
  */
 
@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button a = findViewById(R.id.button);
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 a.setVisibility(View.VISIBLE);
                 b.setVisibility(View.INVISIBLE);
+
             }
         },1000);
     }

@@ -31,6 +31,43 @@
         app:layout_constraintVertical_bias="1.0"
         app:rippleColor="#000000" />
 
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView3"
+        android:layout_width="461dp"
+        android:layout_height="182dp"
+        android:src="@drawable/original"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.848"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView71"
+        android:layout_width="214dp"
+        android:layout_height="104dp"
+        android:rotation="-90"
+        android:rotationX="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:srcCompat="@drawable/kleur"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="214dp"
+        android:layout_height="104dp"
+        android:layout_marginBottom="64dp"
+        android:rotation="-90"
+        android:rotationX="0"
+        app:layout_constraintBottom_toTopOf="@+id/gifImageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/kleur" />
+
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="413dp"
@@ -71,10 +108,10 @@
         android:textOn="Land van Maas en Waal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.517" />
+        app:layout_constraintVertical_bias="0.473" />
 
     <ToggleButton
         android:id="@+id/toggleButton5"
@@ -85,9 +122,9 @@
         android:textOn="Stiekem Gedanst"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.707" />
+        app:layout_constraintVertical_bias="0.63" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
