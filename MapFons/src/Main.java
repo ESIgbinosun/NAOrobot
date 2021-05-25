@@ -55,7 +55,7 @@ public class Main {
                         //this case plays audio and lets NAO move on "the beat"
                     case "muziek1":
                         System.out.println("MALLE BABBE");
-                        nao.LyingBack();
+                        nao.singerPose();
                         //voor PADrick:/home/nao/wav/langef5_1621336162.mp3/malleBabbe.mp3
                         t = new Multithread("/home/nao/wav/langef5_1621338159.mp3",0.6f,0f, alAudioPlayer);
                         t.run();
@@ -73,7 +73,7 @@ public class Main {
                     //this case plays audio and lets NAO move on "the beat"
                     case "muziek3":
                         System.out.println("STIEKEM GEDANST");
-                        nao.LyingBelly();
+                        nao.Sit();
                         //voor PADrick:/home/nao/wav/langef5_1621336146.mp3/stiekemGedanst.mp3
                         t3 = new Multithread("/home/nao/wav/langef5_1621338137.mp3",0.6f,0f, alAudioPlayer);
                         t3.run();
@@ -91,7 +91,7 @@ public class Main {
                     //this case plays audio and lets NAO move on "the beat"
                     case "muziek5":
                         System.out.println("MET DE VLAM IN DE PIJP");
-                        nao.ArmsForward();
+                        nao.singerPose();
                         //voor PADrick:/home/nao/wav/langef5_1621336125.mp3/metDeVlamInDePijp.mp3
                         t5 = new Multithread("/home/nao/wav/langef5_1621338126.mp3",0.6f,0f, alAudioPlayer);
                         t5.run();

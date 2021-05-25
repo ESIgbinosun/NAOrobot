@@ -8,9 +8,10 @@ public class Main {
         MyThread thread1 = new MyThread();
 
         nao.Stand();
+        nao.singerPose();
 
 
-        thread1.start();
+//        thread1.start();
 //        nao.Talk("Welkom bij deze workout. De oefening van " +
 //                "vandaag gaat als volgt. We lopen naar voren, achter, links en rechts." +
 //                " en doen een squat tussendoor");
