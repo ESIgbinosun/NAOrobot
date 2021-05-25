@@ -48,6 +48,7 @@ public class main extends BaseFunctions {
 
             // Speak function directly from app, text to speech on NAO.
             String input = mqtt.readMsg().toLowerCase();
+
             String username = "";
             if (input.startsWith("speak")) {
 
@@ -62,7 +63,7 @@ public class main extends BaseFunctions {
                 System.out.println(iets);
                 baseFunctions.speak(iets);
                 Thread.sleep(1000);
-                input = "";
+                continue;
             }
 
             // Getting username, MQTT is put into a string minus
@@ -80,6 +81,7 @@ public class main extends BaseFunctions {
                 username = iets;
                 baseFunctions.speak("Hallo " + username);
                 Thread.sleep(1000);
+                continue;
             }
 
             // Main switch case, uses input from MQTT server to start tasks.

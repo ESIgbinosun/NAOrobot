@@ -257,9 +257,7 @@ public class BaseFunctions {
     //Leg workout, this part makes the robot perform a task where it'll be
     // speaking out the movements, runtime 1.5 minutes.
     public void legWorkout(int rep, String username) throws Exception {
-        speak("Welkom " + username + " bij deze workout, we beginnen met rustig lopen op onze plaats");
-        Thread.sleep(3000);
-        speak("En stop maar met lopen");
+        speak("Welkom " + username + " bij deze workout.");
         Thread.sleep(3000);
         speak("Nu gaan we drie stappen naar voren");
         Thread.sleep(1000);
@@ -285,8 +283,6 @@ public class BaseFunctions {
         }
 
         Thread.sleep(3000);
-        speak("Nu gaan we weer lekker even lopen op de plaats");
-        Thread.sleep(1000);
         speak("Nu doen we de squat oefening op onze plaats zoals dit");
         Thread.sleep(1000);
         squat(1);
@@ -296,7 +292,6 @@ public class BaseFunctions {
         Thread.sleep(2000);
         speak("Dankjewel voor het actief meedoen met deze workout en tot de volgende keer");
     }
-
 
     //Squat, this part makes the robot perform the task of squatting, here
     // you can also issue the amount if times it should be performed.
