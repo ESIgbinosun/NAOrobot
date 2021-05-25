@@ -19,7 +19,6 @@ public class main extends BaseFunctions {
     public static final int PORT = 9559;
 
 
-
     public static void main(String[] args) throws Exception {
 
         // Function for getting the current date and time.
@@ -43,7 +42,6 @@ public class main extends BaseFunctions {
         }
         // Only shows when the connection with NAO has been made.
         System.out.println("\nConnection has been made!\n" + "The current date is: " + format.format(date));
-
 
         // Endless loop checking for input from received messages Mqtt.java.
         while (true) {
@@ -69,7 +67,7 @@ public class main extends BaseFunctions {
 
             // Getting username, MQTT is put into a string minus
             // the topic value put before the message.
-            if (input.startsWith("user")){
+            if (input.startsWith("user")) {
 
                 char array[] = input.toCharArray();
                 char leeg[] = new char[array.length];
@@ -126,7 +124,7 @@ public class main extends BaseFunctions {
 
                 case "songa":
                     //Change filepath when using a physical robot!
-                    baseFunctions.sitRelaxed();
+                    baseFunctions.singerPose();
                     baseFunctions.play("/home/nao/wav/langef5_1621338126.mp3");
                     System.out.println("Play uitgevoerd.");
                     baseFunctions.stand();
@@ -155,11 +153,11 @@ public class main extends BaseFunctions {
 //                    baseFunctions.stopPlaying(1);
 //                    break;
 
-               /*
-                * Weather, You can issue a city here, it currently is hardcoded in to
-                * make it easier but it is possible to use different cities
-                * if they are supported by the API used.
-                */
+                /*
+                 * Weather, You can issue a city here, it currently is hardcoded in to
+                 * make it easier but it is possible to use different cities
+                 * if they are supported by the API used.
+                 */
 
                 case "amsterdam":
                     baseFunctions.jsonObject("Amsterdam");

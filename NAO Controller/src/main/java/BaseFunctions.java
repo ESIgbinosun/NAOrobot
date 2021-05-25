@@ -16,6 +16,7 @@ import java.util.List;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
+
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -132,6 +133,21 @@ public class BaseFunctions {
     public void stand() throws Exception {
         ALRobotPosture robotPosture = new ALRobotPosture(this.application.session());
         robotPosture.goToPosture("Stand", 1.0f);
+    }
+
+    //function to let the NAO stand in a singerpose
+    public void singerPose() throws Exception {
+        ALMotion alMotion = new ALMotion(this.application.session());
+
+        alMotion.setAngles("LElbowRoll", -1.8, 0.6f);
+        alMotion.setAngles("LShoulderRoll", -1.0, 0.5f);
+        alMotion.setAngles("LShoulderPitch", 0.8, 0.5f);
+        alMotion.setAngles("LElbowYaw", 0, 0.5f);
+        alMotion.setAngles("LWristYaw", -0.5, 0.5f);
+        alMotion.setAngles("RShoulderRoll", 0, 0.5f);
+        alMotion.setAngles("RShoulderPitch", -0.3, 0.5f);
+        alMotion.setAngles("RWristYaw", 1.0, 0.5f);
+
     }
 
     //Speak
