@@ -18,12 +18,10 @@ public class ConversationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_conversation);
         mqtt.makeClient();
         try {
-            Thread.sleep(3000);
+            Thread.sleep(0);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -50,8 +48,8 @@ public class ConversationActivity extends AppCompatActivity {
         startActivity(main);
     }
 
-    public void NEWSUPDATE(View v){
+    public void NUPDATE(View v){
         mqtt.publishMSG("langef5","newsupdate");
     }
-    public void WEATHERUPDATE(View v){ mqtt.publishMSG("langef5","weatherupdate"); }
+    public void WUPDATE(View v){ mqtt.publishMSG("langef5","weatherupdate"); }
 }
