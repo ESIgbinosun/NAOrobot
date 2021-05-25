@@ -48,13 +48,13 @@
 
     <ToggleButton
         android:id="@+id/toggleButton"
-        android:layout_width="146dp"
+        android:layout_width="300dp"
         android:layout_height="62dp"
         android:checked="false"
         android:linksClickable="false"
         android:text="ToggleButton"
-        android:textOff="Play"
-        android:textOn="Play"
+        android:textOff="Met de vlam in de pijp"
+        android:textOn="Met de vlam in de pijp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -64,11 +64,11 @@
 
     <ToggleButton
         android:id="@+id/toggleButton4"
-        android:layout_width="146dp"
+        android:layout_width="300dp"
         android:layout_height="62dp"
         android:text="ToggleButton"
-        android:textOff="Play"
-        android:textOn="Play"
+        android:textOff="Land van Maas en Waal"
+        android:textOn="Land van Maas en Waal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -78,11 +78,11 @@
 
     <ToggleButton
         android:id="@+id/toggleButton5"
-        android:layout_width="146dp"
+        android:layout_width="300dp"
         android:layout_height="62dp"
         android:text="ToggleButton"
-        android:textOff="Play"
-        android:textOn="Play"
+        android:textOff="Stiekem Gedanst"
+        android:textOn="Stiekem Gedanst"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
