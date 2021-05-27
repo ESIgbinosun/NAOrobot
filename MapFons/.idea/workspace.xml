@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff74682b-6316-47e9-8fad-f15f2c23778d" name="Default Changelist" comment="code aangepast zodat we muziek kunnen afspelen op de robot (padricia)">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14-5-2021_14_23_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14-5-2021_14_23__Default_Changelist_.xml" beforeDir="false" />
+    <list default="true" id="ff74682b-6316-47e9-8fad-f15f2c23778d" name="Default Changelist" comment="Singerpose methode toegevoegd om de robot in een pose te laten staan terwijl die muziek afspeelt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/NAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/NAO.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +73,9 @@
       <workItem from="1620810176787" duration="2926000" />
       <workItem from="1620993455576" duration="2771000" />
       <workItem from="1621336281453" duration="5340000" />
-      <workItem from="1621856528733" duration="1573000" />
+      <workItem from="1621856528733" duration="2598000" />
+      <workItem from="1621976054939" duration="954000" />
+      <workItem from="1622117710836" duration="423000" />
     </task>
     <task id="LOCAL-00001" summary="thread class en oefeningen met thread toegevoegd">
       <created>1619693280035</created>
@@ -195,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621341609784</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Singerpose methode toegevoegd om de robot in een pose te laten staan terwijl die muziek afspeelt">
+      <created>1621858519870</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1621858519870</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,6 +237,7 @@
     <MESSAGE value="kleine workout gemaakt om bij de oplevering te laten zien" />
     <MESSAGE value="code aanpassing en opschoning" />
     <MESSAGE value="code aangepast zodat we muziek kunnen afspelen op de robot (padricia)" />
-    <option name="LAST_COMMIT_MESSAGE" value="code aangepast zodat we muziek kunnen afspelen op de robot (padricia)" />
+    <MESSAGE value="Singerpose methode toegevoegd om de robot in een pose te laten staan terwijl die muziek afspeelt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Singerpose methode toegevoegd om de robot in een pose te laten staan terwijl die muziek afspeelt" />
   </component>
 </project>
