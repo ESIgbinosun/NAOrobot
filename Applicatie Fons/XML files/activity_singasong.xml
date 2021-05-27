@@ -11,12 +11,12 @@
         android:id="@+id/button5"
         android:layout_width="238dp"
         android:layout_height="70dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="76dp"
         android:onClick="SONG1"
         android:text="MALLE BABBE"
         app:backgroundTint="#F44336"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintHorizontal_bias="0.104"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,12 +24,12 @@
         android:id="@+id/button6"
         android:layout_width="238dp"
         android:layout_height="70dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="224dp"
         android:onClick="SONG2"
         android:text="EEN EIGEN HUIS"
         app:backgroundTint="#F44336"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintHorizontal_bias="0.104"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -82,12 +82,12 @@
         android:id="@+id/button16"
         android:layout_width="237dp"
         android:layout_height="70dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="372dp"
         android:onClick="SONG4"
         android:text="LAND VAN MAAS EN WAAL"
         app:backgroundTint="#F44336"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintHorizontal_bias="0.109"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

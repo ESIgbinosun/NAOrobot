@@ -4,7 +4,7 @@
  * Author: Diego Brandjes
  * Class: IT101
  * Date: 09-03-2021
- * Edit Date:  13-05-2021
+ * Edit Date:  26-05-2021
  */
 
 import com.aldebaran.qi.Application;
@@ -16,6 +16,7 @@ import java.util.List;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
+
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -134,6 +135,21 @@ public class BaseFunctions {
         robotPosture.goToPosture("Stand", 1.0f);
     }
 
+    //function to let the NAO stand in a singerpose
+    public void singerPose() throws Exception {
+        ALMotion alMotion = new ALMotion(this.application.session());
+
+        alMotion.setAngles("LElbowRoll", -1.8, 0.6f);
+        alMotion.setAngles("LShoulderRoll", -1.0, 0.5f);
+        alMotion.setAngles("LShoulderPitch", 0.8, 0.5f);
+        alMotion.setAngles("LElbowYaw", 0, 0.5f);
+        alMotion.setAngles("LWristYaw", -0.5, 0.5f);
+        alMotion.setAngles("RShoulderRoll", 0, 0.5f);
+        alMotion.setAngles("RShoulderPitch", -0.3, 0.5f);
+        alMotion.setAngles("RWristYaw", 1.0, 0.5f);
+
+    }
+
     //Speak
     public void speak(String tekst) throws Exception {
 
@@ -241,9 +257,7 @@ public class BaseFunctions {
     //Leg workout, this part makes the robot perform a task where it'll be
     // speaking out the movements, runtime 1.5 minutes.
     public void legWorkout(int rep, String username) throws Exception {
-        speak("Welkom " + username + " bij deze workout, we beginnen met rustig lopen op onze plaats");
-        Thread.sleep(3000);
-        speak("En stop maar met lopen");
+        speak("Welkom " + username + " bij deze workout.");
         Thread.sleep(3000);
         speak("Nu gaan we drie stappen naar voren");
         Thread.sleep(1000);
@@ -269,8 +283,6 @@ public class BaseFunctions {
         }
 
         Thread.sleep(3000);
-        speak("Nu gaan we weer lekker even lopen op de plaats");
-        Thread.sleep(1000);
         speak("Nu doen we de squat oefening op onze plaats zoals dit");
         Thread.sleep(1000);
         squat(1);
@@ -280,7 +292,6 @@ public class BaseFunctions {
         Thread.sleep(2000);
         speak("Dankjewel voor het actief meedoen met deze workout en tot de volgende keer");
     }
-
 
     //Squat, this part makes the robot perform the task of squatting, here
     // you can also issue the amount if times it should be performed.

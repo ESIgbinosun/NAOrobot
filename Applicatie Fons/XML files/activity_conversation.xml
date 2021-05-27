@@ -5,19 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    android:onClick="WEATHERUPDATE"
+    android:onClick="WUPDATE"
     tools:context=".ConversationActivity">
 
     <Button
         android:id="@+id/button10"
         android:layout_width="238dp"
         android:layout_height="70dp"
-        android:layout_marginTop="636dp"
-        android:onClick="NEWSUPDATE"
+        android:layout_marginTop="592dp"
+        android:onClick="NUPDATE"
         android:text="CLICK FOR A NEWS UPDATE"
         app:backgroundTint="#F44336"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,10 +59,11 @@
         android:layout_width="238dp"
         android:layout_height="70dp"
         android:layout_marginTop="100dp"
+        android:onClick="WUPDATE"
         android:text="CLICK FOR A WEATHER UPDATE"
         app:backgroundTint="#F44336"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

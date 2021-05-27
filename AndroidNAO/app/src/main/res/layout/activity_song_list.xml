@@ -13,34 +13,71 @@
         android:id="@+id/button15"
         android:layout_width="120dp"
         android:layout_height="47dp"
-        android:layout_marginStart="144dp"
+        android:layout_marginStart="14dp"
         android:layout_marginTop="50dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="14dp"
         android:layout_marginBottom="50dp"
         android:background="#000000"
         android:hapticFeedbackEnabled="true"
         android:onClick="back"
-        android:text="Back"
+        android:text="Terug"
         android:textColor="#000000"
         app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:rippleColor="#000000" />
 
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView3"
+        android:layout_width="461dp"
+        android:layout_height="182dp"
+        android:src="@drawable/original"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.848"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView71"
+        android:layout_width="214dp"
+        android:layout_height="104dp"
+        android:rotation="-90"
+        android:rotationX="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:srcCompat="@drawable/kleur"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="214dp"
+        android:layout_height="104dp"
+        android:layout_marginBottom="64dp"
+        android:rotation="-90"
+        android:rotationX="0"
+        app:layout_constraintBottom_toTopOf="@+id/gifImageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/kleur" />
+
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="413dp"
         android:layout_height="193dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="500dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -48,13 +85,13 @@
 
     <ToggleButton
         android:id="@+id/toggleButton"
-        android:layout_width="146dp"
+        android:layout_width="300dp"
         android:layout_height="62dp"
         android:checked="false"
         android:linksClickable="false"
         android:text="ToggleButton"
-        android:textOff="Play"
-        android:textOn="Pause"
+        android:textOff="Met de vlam in de pijp"
+        android:textOn="Met de vlam in de pijp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -64,30 +101,30 @@
 
     <ToggleButton
         android:id="@+id/toggleButton4"
-        android:layout_width="146dp"
+        android:layout_width="300dp"
         android:layout_height="62dp"
         android:text="ToggleButton"
-        android:textOff="Play"
-        android:textOn="Pause"
+        android:textOff="Land van Maas en Waal"
+        android:textOn="Land van Maas en Waal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.517" />
+        app:layout_constraintVertical_bias="0.473" />
 
     <ToggleButton
         android:id="@+id/toggleButton5"
-        android:layout_width="146dp"
+        android:layout_width="300dp"
         android:layout_height="62dp"
         android:text="ToggleButton"
-        android:textOff="Play"
-        android:textOn="Pause"
+        android:textOff="Stiekem Gedanst"
+        android:textOn="Stiekem Gedanst"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.707" />
+        app:layout_constraintVertical_bias="0.63" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
