@@ -9,7 +9,7 @@ public class Main {
         NAO nao = new NAO();
 
         //connect to the NAO robot, physical or virtual
-        nao.verbind("localhost",9559);
+        nao.verbind("192.168.137.62",9559);
         ALAudioPlayer alAudioPlayer = new ALAudioPlayer(NAO.getApplication().session());
         //Fysieke robots : hostname = "padrick.robot.hva-robots.nl" port = 9559
         Thread.sleep(5000);
@@ -58,7 +58,7 @@ public class Main {
                         System.out.println("MALLE BABBE SPEELT");
                         nao.singerPose();
                         //voor PADrick:/home/nao/wav/langef5_1621336162.mp3/malleBabbe.mp3
-                        t = new Multithread("/home/nao/wav/langef5_1621338159.mp3",0.6f,0f, alAudioPlayer);
+                        t = new Multithread("/home/nao/wav/langef5_1621336162.mp3/malleBabbe.mp3",0.6f,0f, alAudioPlayer);
                         t.run();
                         nao.Stand();
                         break;
@@ -67,7 +67,7 @@ public class Main {
                         System.out.println("EEN EIGEN HUIS SPEELT");
                         nao.Sit();
                         //voor PADrick:/home/nao/wav/langef5_1621335608.mp3/eenEigenHuis (online-audio-converter.com).mp3
-                        t2 = new Multithread("/home/nao/wav/langef5_1621338169.mp3",0.6f,0f, alAudioPlayer);
+                        t2 = new Multithread("/home/nao/wav/langef5_1621335608.mp3/eenEigenHuis (online-audio-converter.com).mp3",0.6f,0f, alAudioPlayer);
                         t2.run();
                         nao.Stand();
                         break;
@@ -76,7 +76,7 @@ public class Main {
                         System.out.println("STIEKEM GEDANST SPEELT");
                         nao.Sit();
                         //voor PADrick:/home/nao/wav/langef5_1621336146.mp3/stiekemGedanst.mp3
-                        t3 = new Multithread("/home/nao/wav/langef5_1621338137.mp3",0.6f,0f, alAudioPlayer);
+                        t3 = new Multithread("/home/nao/wav/langef5_1621336146.mp3/stiekemGedanst.mp3",0.6f,0f, alAudioPlayer);
                         t3.run();
                         nao.Stand();
                         break;
@@ -85,7 +85,7 @@ public class Main {
                         System.out.println("LAND VAN MAAS EN WAAL SPEELt");
                         nao.Crouch();
                         //voor PADrick:/home/nao/wav/langef5_1621335922.mp3/landVanMaasEnWaal (online-audio-converter.com).mp3
-                        t4 = new Multithread("/home/nao/wav/langef5_1621338149.mp3",0.6f,0f, alAudioPlayer);
+                        t4 = new Multithread("/home/nao/wav/langef5_1621335922.mp3/landVanMaasEnWaal (online-audio-converter.com).mp3",0.6f,0f, alAudioPlayer);
                         t4.run();
                         nao.Stand();
                         break;
@@ -94,7 +94,7 @@ public class Main {
                         System.out.println("MET DE VLAM IN DE PIJP SPEELT");
                         nao.singerPose();
                         //voor PADrick:/home/nao/wav/langef5_1621336125.mp3/metDeVlamInDePijp.mp3
-                        t5 = new Multithread("/home/nao/wav/langef5_1621338126.mp3",0.6f,0f, alAudioPlayer);
+                        t5 = new Multithread("/home/nao/wav/langef5_1621336125.mp3/metDeVlamInDePijp.mp3",0.6f,0f, alAudioPlayer);
                         t5.run();
                         nao.Stand();
                         break;
