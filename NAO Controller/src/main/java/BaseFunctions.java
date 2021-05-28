@@ -4,7 +4,7 @@
  * Author: Diego Brandjes
  * Class: IT101
  * Date: 09-03-2021
- * Edit Date:  26-05-2021
+ * Edit Date:  28-05-2021
  */
 
 //FINAL
@@ -149,7 +149,6 @@ public class BaseFunctions {
         alMotion.setAngles("RShoulderRoll", 0, 0.4f);
         alMotion.setAngles("RShoulderPitch", -0.3, 0.4f);
         alMotion.setAngles("RWristYaw", 1.0, 0.4f);
-
     }
 
     //Speak
@@ -196,31 +195,6 @@ public class BaseFunctions {
         alAudioPlayer.pause(ID);
     }
 
-    // camera
-//    public void camera() throws Exception {
-//        ALVideoDevice videoDevice = new ALVideoDevice(this.application.session());
-//        String videoName = videoDevice.subscribeCamera("cameraFront", 0, 2, 11,5);
-//
-//        Mat img = new Mat(new size(640, 480), CV_8UC3);
-//
-//        while (true) {
-//
-//            List<Object> videoObject = (List<Object>)videoDevice.getImagesRemote(videoName);
-//
-//            ByteBuffer imgData = (ByteBuffer) videoObject.get(6);
-//            byte[] data = new byte[imgData.capacity()];
-//
-//            ((ByteBuffer)imgData.duplicate().clear()).get(data);
-//            img.put(0,0, data);
-//
-//            videoDevice.releaseImage(videoName);
-//            HighGui.imshow("Image", img);
-//            HighGui.waitkey(1);
-//
-//        }
-//    }
-
-
     /* Workouts */
 
     //Arm workout
@@ -258,8 +232,10 @@ public class BaseFunctions {
 
     //Leg workout, this part makes the robot perform a task where it'll be
     // speaking out the movements, runtime 1.5 minutes.
-    public void legWorkout(int rep, String username) throws Exception {
-        speak("Welkom " + username + " bij deze workout.");
+    public void legWorkout(int rep) throws Exception {
+
+        stand();
+        speak("Welkom bij deze workout.");
         Thread.sleep(1000);
         speak("Nu gaan we drie stappen naar voren");
         Thread.sleep(1000);

@@ -4,7 +4,7 @@
  * Author: Diego Brandjes
  * Class: IT101
  * Date: 09-03-2021
- * Edit Date:  26-05-2021
+ * Edit Date:  28-05-2021
  */
 
 //FINAL
@@ -17,7 +17,7 @@ public class main extends BaseFunctions {
     // Change hostname when using a physical robot.
     // "padrick.robot.hva-robots.nl"
     public static final String DATEFORMAT = "dd-MM-yyyy HH:mm:ss";
-    public static final String HOSTNAME = "192.168.137.40";
+    public static final String HOSTNAME = "localhost"; // use IP from laptop/robot connection.
     public static final int PORT = 9559;
     public static BaseFunctions baseFunctions = new BaseFunctions();
 
@@ -25,42 +25,6 @@ public class main extends BaseFunctions {
     public static void onMessage(String message) throws Exception {
 
         System.out.println(message);
-
-        // Speak function directly from app, text to speech on NAO.
-        String input = message.toLowerCase();
-
-        String username = "";
-        if (input.startsWith("speak")) {
-
-            char array[] = input.toCharArray();
-            char leeg[] = new char[array.length];
-
-            for (int i = 5; i < array.length; i++) {
-                leeg[i] = array[i];
-            }
-
-            String iets = String.valueOf(leeg);
-            System.out.println(iets);
-            baseFunctions.speak(iets);
-            Thread.sleep(1000);
-        }
-
-        // Getting username, MQTT is put into a string minus
-        // the topic value put before the message.
-        if (input.startsWith("user")) {
-
-            char array[] = input.toCharArray();
-            char leeg[] = new char[array.length];
-
-            for (int i = 4; i < array.length; i++) {
-                leeg[i] = array[i];
-            }
-
-            String iets = String.valueOf(leeg);
-            username = iets;
-            baseFunctions.speak("Hallo " + username);
-            Thread.sleep(1000);
-        }
 
         // Main switch case, uses input from MQTT server to start tasks.
         switch (message.toLowerCase()) {
@@ -72,6 +36,7 @@ public class main extends BaseFunctions {
                 break;
 
             case "oefeningarmen":
+
                 baseFunctions.armWorkout(4);
                 System.out.println("Armen workout uitgevoerd.");
                 break;
@@ -92,7 +57,7 @@ public class main extends BaseFunctions {
                 break;
 
             case "benenworkout":
-                baseFunctions.legWorkout(2, username);
+                baseFunctions.legWorkout(2);
                 System.out.println("Benen workout uitgevoerd.");
                 break;
 
