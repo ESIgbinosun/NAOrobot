@@ -40,9 +40,7 @@ public class mqtt {
                 }
 
                 public void messageArrived(String topic, MqttMessage message) throws Exception {
-                    msg = message.toString();
-                    // Shows incoming messages in console.
-                    System.out.println(message.toString());
+                    main.onMessage(message.toString());
                 }
 
                 public void deliveryComplete(IMqttDeliveryToken token) {

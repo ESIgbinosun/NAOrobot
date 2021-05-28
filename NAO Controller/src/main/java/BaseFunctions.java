@@ -141,14 +141,14 @@ public class BaseFunctions {
     public void singerPose() throws Exception {
         ALMotion alMotion = new ALMotion(this.application.session());
 
-        alMotion.setAngles("LElbowRoll", -1.8, 0.6f);
-        alMotion.setAngles("LShoulderRoll", -1.0, 0.5f);
-        alMotion.setAngles("LShoulderPitch", 0.8, 0.5f);
-        alMotion.setAngles("LElbowYaw", 0, 0.5f);
-        alMotion.setAngles("LWristYaw", -0.5, 0.5f);
-        alMotion.setAngles("RShoulderRoll", 0, 0.5f);
-        alMotion.setAngles("RShoulderPitch", -0.3, 0.5f);
-        alMotion.setAngles("RWristYaw", 1.0, 0.5f);
+        alMotion.setAngles("LElbowRoll", -1.8, 0.5f);
+        alMotion.setAngles("LShoulderRoll", -1.0, 0.4f);
+        alMotion.setAngles("LShoulderPitch", 0.8, 0.4f);
+        alMotion.setAngles("LElbowYaw", 0, 0.4f);
+        alMotion.setAngles("LWristYaw", -0.5, 0.4f);
+        alMotion.setAngles("RShoulderRoll", 0, 0.4f);
+        alMotion.setAngles("RShoulderPitch", -0.3, 0.4f);
+        alMotion.setAngles("RWristYaw", 1.0, 0.4f);
 
     }
 
@@ -184,7 +184,7 @@ public class BaseFunctions {
     public void play(String ID) throws Exception {
         ALAudioPlayer alAudioPlayer = new ALAudioPlayer(this.application.session());
         try {
-            alAudioPlayer.playFile(ID);
+            alAudioPlayer.playFile(ID, 0.4f,0f);
         } catch (Exception e) {
         }
         Thread.sleep(1000);
@@ -260,7 +260,7 @@ public class BaseFunctions {
     // speaking out the movements, runtime 1.5 minutes.
     public void legWorkout(int rep, String username) throws Exception {
         speak("Welkom " + username + " bij deze workout.");
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         speak("Nu gaan we drie stappen naar voren");
         Thread.sleep(1000);
         walk(0.1f, 0f, 0f);
@@ -309,7 +309,7 @@ public class BaseFunctions {
             alMotion.setAngles("RShoulderPitch", 0, 0.3f);
         }
         ALRobotPosture alRobotPosture = new ALRobotPosture(this.application.session());
-        alRobotPosture.goToPosture("Stand", 1.0f);
+        alRobotPosture.goToPosture("Stand",1.0f);
     }
 }
 
