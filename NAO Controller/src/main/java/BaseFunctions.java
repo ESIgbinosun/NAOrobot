@@ -4,7 +4,7 @@
  * Author: Diego Brandjes
  * Class: IT101
  * Date: 09-03-2021
- * Edit Date:  28-05-2021
+ * Edit Date:  30-05-2021
  */
 
 //FINAL
@@ -44,6 +44,7 @@ public class BaseFunctions {
         asyncALMotion = alMotion.async();
     }
 
+    // Makes the robot speak out data from a weather API, is given a string to use for city data.
     public void jsonObject(String stad) throws IOException {
 
         try {
@@ -160,6 +161,7 @@ public class BaseFunctions {
         tts.say(tekst);
     }
 
+    // Simple test message
     public void test() throws Exception {
         ALTextToSpeech tts = new ALTextToSpeech(this.application.session());
         tts.say("Test");
@@ -197,7 +199,7 @@ public class BaseFunctions {
 
     /* Workouts */
 
-    //Arm workout
+    //Arm workout, is given an Int used for the amount of times a repeat is executed.
     public void armWorkout(int rep) throws Exception {
 
         stand();
@@ -231,7 +233,8 @@ public class BaseFunctions {
     }
 
     //Leg workout, this part makes the robot perform a task where it'll be
-    // speaking out the movements, runtime 1.5 minutes.
+    // speaking out the movements, runtime 1.5 minutes. Is given an
+    // Int used for the amount of times a repeat is executed.
     public void legWorkout(int rep) throws Exception {
 
         stand();
@@ -272,7 +275,7 @@ public class BaseFunctions {
     }
 
     //Squat, this part makes the robot perform the task of squatting, here
-    // you can also issue the amount if times it should be performed.
+    // you can also issue the amount if times it should be performed by passing an Int.
     public void squat(int reps) throws Exception {
 
         for (int i = 0; i < reps; i++) {

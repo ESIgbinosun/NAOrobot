@@ -4,7 +4,7 @@
  * Author: Diego Brandjes
  * Class: IT101
  * Date: 09-03-2021
- * Edit Date:  28-05-2021
+ * Edit Date:  30-05-2021
  */
 
 //FINAL
@@ -16,14 +16,20 @@ public class main extends BaseFunctions {
 
     // Change hostname when using a physical robot.
     // "padrick.robot.hva-robots.nl"
-    public static final String DATEFORMAT = "dd-MM-yyyy HH:mm:ss";
-    public static final String HOSTNAME = "localhost"; // use IP from laptop/robot connection.
+    public static final String HOSTNAME = "localhost"; // use IP from laptop/robot connection or localhost when using the Choreograph software.
     public static final int PORT = 9559;
+
+    public static final String DATEFORMAT = "dd-MM-yyyy HH:mm:ss";
+    public static final String SONGA = "/home/nao/wav/langef5_1621336125.mp3";
+    public static final String SONGB = "/home/nao/wav/langef5_1621335608.mp3";
+    public static final String SONGC = "/home/nao/wav/langef5_1621336146.mp3";
+
     public static BaseFunctions baseFunctions = new BaseFunctions();
 
 
     public static void onMessage(String message) throws Exception {
 
+        // Prints the received MQTT message into the console.
         System.out.println(message);
 
         // Main switch case, uses input from MQTT server to start tasks.
@@ -36,7 +42,6 @@ public class main extends BaseFunctions {
                 break;
 
             case "oefeningarmen":
-
                 baseFunctions.armWorkout(4);
                 System.out.println("Armen workout uitgevoerd.");
                 break;
@@ -62,15 +67,15 @@ public class main extends BaseFunctions {
                 break;
 
             /*
-             * Be sure to add the filepaths to the songs uploaded on the robot
+             * Be sure to add the correct filepath to the songs uploaded on the robot
              * if this isn't done there is a chance the controller code might crash
-             * because it can't find the file.
+             * because it can't find the file. This is done by changing the Final strings.
              */
 
             case "songa":
                 //Change filepath when using a physical robot!
                 baseFunctions.singerPose();
-                baseFunctions.play("/home/nao/wav/langef5_1621336125.mp3");
+                baseFunctions.play(SONGA);
                 System.out.println("Play uitgevoerd. Met de vlam in de pijp");
                 baseFunctions.stand();
                 break;
@@ -78,7 +83,7 @@ public class main extends BaseFunctions {
             case "songb":
                 //Change filepath when using a physical robot!
                 baseFunctions.sitRelaxed();
-                baseFunctions.play("/home/nao/wav/langef5_1621335608.mp3");
+                baseFunctions.play(SONGB);
                 System.out.println("Play2 uitgevoerd. Een eigen huis");
                 baseFunctions.stand();
                 break;
@@ -86,7 +91,7 @@ public class main extends BaseFunctions {
             case "songc":
                 //Change filepath when using a physical robot!
                 baseFunctions.sitRelaxed();
-                baseFunctions.play("/home/nao/wav/langef5_1621336146.mp3");
+                baseFunctions.play(SONGC);
                 System.out.println("Play3 uitgevoerd. Stiekem Gedanst");
                 baseFunctions.stand();
                 break;
@@ -125,7 +130,7 @@ public class main extends BaseFunctions {
         SimpleDateFormat format = new SimpleDateFormat(DATEFORMAT);
         Date date = new Date();
 
-        // Calling classes, used for MQTT functions & NAO functions.
+        // Calling classes, used for MQTT functions & NAO functions. Don't remove, this keeps the main running.
         mqtt mqtt = new mqtt();
 
         //  Keeps trying to start connection with the NAO robot/Software.

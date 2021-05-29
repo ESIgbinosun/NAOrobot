@@ -38,7 +38,9 @@ public class mqtt {
                 public void connectionLost(Throwable cause) {
                 }
 
+                // Runs everytime a message arrives and passes the message to the main class.
                 public void messageArrived(String topic, MqttMessage message) throws Exception {
+                    //Checks for duplicates, removes unwanted stacking of messages.
                     if (message.isDuplicate() == false){
                         main.onMessage(message.toString());
                     }
