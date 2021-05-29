@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         ProgressBar b = findViewById(R.id.progressBar2);
         a.setVisibility(View.INVISIBLE);
 
+        // A delay where a loading icon is hidden after 1 second and a button
+        // will appear in it's place.
         a.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -42,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         },1000);
     }
 
-    // Fullscreen
+    // Enables Fullscreen
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);

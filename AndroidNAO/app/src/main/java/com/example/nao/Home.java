@@ -59,7 +59,10 @@ public class Home extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * Multiple functions sending Strings via MQTT, these are
+     * used in a switch case on the receiving side.
+     */
     public void connect (View v) throws Exception {
         mqtt.publishMSG("connect");
     }

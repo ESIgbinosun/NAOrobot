@@ -31,7 +31,7 @@ public class weer extends AppCompatActivity {
         setContentView(R.layout.activity_weer);
 
     }
-    // Fullscreen
+    // Enables Fullscreen
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
@@ -51,6 +51,10 @@ public class weer extends AppCompatActivity {
         startActivity(i);
     }
 
+    /**
+     * Sends a string via MQTT, this string is used for an API
+     * on the receiving side.
+     */
     public void amsterdam (View v) throws Exception {
         mqtt.publishMSG("amsterdam");
     }
