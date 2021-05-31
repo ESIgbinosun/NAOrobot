@@ -185,7 +185,7 @@ public class BaseFunctions {
     public void play(String ID) throws Exception {
         ALAudioPlayer alAudioPlayer = new ALAudioPlayer(this.application.session());
         try {
-            alAudioPlayer.playFile(ID, 0.4f,0f);
+            alAudioPlayer.playFile(ID, 1f,0f);
         } catch (Exception e) {
         }
         Thread.sleep(1000);
@@ -229,6 +229,30 @@ public class BaseFunctions {
         alMotion.setAngles("RShoulderRoll", 2.3, 0.1f);
         Thread.sleep(1000);
 
+        for (int i = 0; i < rep; i++) {
+            alMotion.setAngles("RShoulderPitch", -0.01, 0.2f);
+            alMotion.setAngles("LShoulderPitch", -0.01, 0.2f);
+            alMotion.setAngles("LShoulderRoll", 0.8, 0.3f);
+            alMotion.setAngles("RShoulderRoll", -0.8, 0.3f);
+            alMotion.setAngles("LElbowRoll", 0.02, 0.3f);
+            alMotion.setAngles("RElbowRoll", 0.02, 0.3f);
+            alMotion.setAngles("LElbowYaw", -1.5, 0.2f);
+            alMotion.setAngles("RElbowYaw", 1.5, 0.2f);
+
+            Thread.sleep(1000);
+
+            alMotion.setAngles("RShoulderPitch", -0.01, 0.2f);
+            alMotion.setAngles("LShoulderPitch", -0.01, 0.2f);
+            alMotion.setAngles("LShoulderRoll", 0.03, 0.3f);
+            alMotion.setAngles("RShoulderRoll", -0.03, 0.3f);
+            alMotion.setAngles("LElbowRoll", -0.02, 0.3f);
+            alMotion.setAngles("RElbowRoll", -0.02, 0.3f);
+            alMotion.setAngles("LElbowYaw", -1.5, 0.2f);
+            alMotion.setAngles("RElbowYaw", 1.5, 0.2f);
+
+            Thread.sleep(1000);
+        }
+
         stand();
     }
 
@@ -252,7 +276,7 @@ public class BaseFunctions {
         Thread.sleep(1000);
         walk(-0.1f, 0f, 0f);
         Thread.sleep(2000);
-        speak("Dit herhalen we " + rep + " keer");
+        speak("Dit herhalen we 1000000000 keer");
 
         for (int i = 0; i < rep; i++) {
             Thread.sleep(1000);

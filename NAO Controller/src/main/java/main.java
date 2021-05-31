@@ -16,7 +16,7 @@ public class main extends BaseFunctions {
 
     // Change hostname when using a physical robot.
     // "padrick.robot.hva-robots.nl"
-    public static final String HOSTNAME = "localhost"; // use IP from laptop/robot connection or localhost when using the Choreograph software.
+    public static final String HOSTNAME = "192.168.137.242"; // use IP from laptop/robot connection or localhost when using the Choreograph software.
     public static final int PORT = 9559;
 
     public static final String DATEFORMAT = "dd-MM-yyyy HH:mm:ss";
