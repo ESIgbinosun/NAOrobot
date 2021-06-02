@@ -4,9 +4,11 @@
  * Author: Diego Brandjes
  * Class: IT101
  * Date: 09-03-2021
- * Edit Date:  14-05-2021
+ * Edit Date:  28-05-2021
  * FINAL
  */
+
+//FINAL
 
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
@@ -20,13 +22,12 @@ public class mqtt {
     private static final String USERNAME = "brandjd1";
     private static final String PASSWORD = "qVlPNohG5wWSUwfBi9Xz";
     MemoryPersistence persistence = new MemoryPersistence();
-    String msg = "";
-
 
     // Connecting to server
     mqtt() {
 
         try {
+
             // Client ID needs to be unique for every instance.
             client = new MqttClient(CONNECTION_URL, "ReceivingNAO", persistence);
 
@@ -37,10 +38,12 @@ public class mqtt {
                 public void connectionLost(Throwable cause) {
                 }
 
+                // Runs everytime a message arrives and passes the message to the main class.
                 public void messageArrived(String topic, MqttMessage message) throws Exception {
-                    msg = message.toString();
-                    // Shows incoming messages in console.
-                    System.out.println(message.toString());
+                    //Checks for duplicates, removes unwanted stacking of messages.
+                    if (message.isDuplicate() == false){
+                        main.onMessage(message.toString());
+                    }
                 }
 
                 public void deliveryComplete(IMqttDeliveryToken token) {
@@ -61,23 +64,4 @@ public class mqtt {
         return connOpts;
     }
 
-    // Received messages will be put in a string, the string will be cleared to
-    // prevent reoccurring messages.
-    public String readMsg() {
-        String test = msg;
-        msg = "";
-        return test;
-    }
-
-    // Unused publish code, use this for sending logs or info to the server.
-    public void publish(String input) {
-
-        String msg = input;
-        try {
-            client.publish(SUBSCRIPTION, msg.getBytes(), 0, false);
-        } catch (MqttException e) {
-            e.printStackTrace();
-        }
-
-    }
 }

@@ -4,8 +4,10 @@
  * Author: Diego Brandjes
  * Class: IT101
  * Date: 09-03-2021
- * Edit Date:  13-05-2021
+ * Edit Date:  30-05-2021
  */
+
+//FINAL
 
 import com.aldebaran.qi.Application;
 import com.aldebaran.qi.helper.proxies.*;
@@ -16,6 +18,7 @@ import java.util.List;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
+
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -41,6 +44,7 @@ public class BaseFunctions {
         asyncALMotion = alMotion.async();
     }
 
+    // Makes the robot speak out data from a weather API, is given a string to use for city data.
     public void jsonObject(String stad) throws IOException {
 
         try {
@@ -134,6 +138,20 @@ public class BaseFunctions {
         robotPosture.goToPosture("Stand", 1.0f);
     }
 
+    //function to let the NAO stand in a singerpose
+    public void singerPose() throws Exception {
+        ALMotion alMotion = new ALMotion(this.application.session());
+
+        alMotion.setAngles("LElbowRoll", -1.8, 0.5f);
+        alMotion.setAngles("LShoulderRoll", -1.0, 0.4f);
+        alMotion.setAngles("LShoulderPitch", 0.8, 0.4f);
+        alMotion.setAngles("LElbowYaw", 0, 0.4f);
+        alMotion.setAngles("LWristYaw", -0.5, 0.4f);
+        alMotion.setAngles("RShoulderRoll", 0, 0.4f);
+        alMotion.setAngles("RShoulderPitch", -0.3, 0.4f);
+        alMotion.setAngles("RWristYaw", 1.0, 0.4f);
+    }
+
     //Speak
     public void speak(String tekst) throws Exception {
 
@@ -143,6 +161,7 @@ public class BaseFunctions {
         tts.say(tekst);
     }
 
+    // Simple test message
     public void test() throws Exception {
         ALTextToSpeech tts = new ALTextToSpeech(this.application.session());
         tts.say("Test");
@@ -166,7 +185,7 @@ public class BaseFunctions {
     public void play(String ID) throws Exception {
         ALAudioPlayer alAudioPlayer = new ALAudioPlayer(this.application.session());
         try {
-            alAudioPlayer.playFile(ID);
+            alAudioPlayer.playFile(ID, 1f,0f);
         } catch (Exception e) {
         }
         Thread.sleep(1000);
@@ -178,34 +197,9 @@ public class BaseFunctions {
         alAudioPlayer.pause(ID);
     }
 
-    // camera
-//    public void camera() throws Exception {
-//        ALVideoDevice videoDevice = new ALVideoDevice(this.application.session());
-//        String videoName = videoDevice.subscribeCamera("cameraFront", 0, 2, 11,5);
-//
-//        Mat img = new Mat(new size(640, 480), CV_8UC3);
-//
-//        while (true) {
-//
-//            List<Object> videoObject = (List<Object>)videoDevice.getImagesRemote(videoName);
-//
-//            ByteBuffer imgData = (ByteBuffer) videoObject.get(6);
-//            byte[] data = new byte[imgData.capacity()];
-//
-//            ((ByteBuffer)imgData.duplicate().clear()).get(data);
-//            img.put(0,0, data);
-//
-//            videoDevice.releaseImage(videoName);
-//            HighGui.imshow("Image", img);
-//            HighGui.waitkey(1);
-//
-//        }
-//    }
-
-
     /* Workouts */
 
-    //Arm workout
+    //Arm workout, is given an Int used for the amount of times a repeat is executed.
     public void armWorkout(int rep) throws Exception {
 
         stand();
@@ -235,16 +229,41 @@ public class BaseFunctions {
         alMotion.setAngles("RShoulderRoll", 2.3, 0.1f);
         Thread.sleep(1000);
 
+        for (int i = 0; i < rep; i++) {
+            alMotion.setAngles("RShoulderPitch", -0.01, 0.2f);
+            alMotion.setAngles("LShoulderPitch", -0.01, 0.2f);
+            alMotion.setAngles("LShoulderRoll", 0.8, 0.3f);
+            alMotion.setAngles("RShoulderRoll", -0.8, 0.3f);
+            alMotion.setAngles("LElbowRoll", 0.02, 0.3f);
+            alMotion.setAngles("RElbowRoll", 0.02, 0.3f);
+            alMotion.setAngles("LElbowYaw", -1.5, 0.2f);
+            alMotion.setAngles("RElbowYaw", 1.5, 0.2f);
+
+            Thread.sleep(1000);
+
+            alMotion.setAngles("RShoulderPitch", -0.01, 0.2f);
+            alMotion.setAngles("LShoulderPitch", -0.01, 0.2f);
+            alMotion.setAngles("LShoulderRoll", 0.03, 0.3f);
+            alMotion.setAngles("RShoulderRoll", -0.03, 0.3f);
+            alMotion.setAngles("LElbowRoll", -0.02, 0.3f);
+            alMotion.setAngles("RElbowRoll", -0.02, 0.3f);
+            alMotion.setAngles("LElbowYaw", -1.5, 0.2f);
+            alMotion.setAngles("RElbowYaw", 1.5, 0.2f);
+
+            Thread.sleep(1000);
+        }
+
         stand();
     }
 
     //Leg workout, this part makes the robot perform a task where it'll be
-    // speaking out the movements, runtime 1.5 minutes.
-    public void legWorkout(int rep, String username) throws Exception {
-        speak("Welkom " + username + " bij deze workout, we beginnen met rustig lopen op onze plaats");
-        Thread.sleep(3000);
-        speak("En stop maar met lopen");
-        Thread.sleep(3000);
+    // speaking out the movements, runtime 1.5 minutes. Is given an
+    // Int used for the amount of times a repeat is executed.
+    public void legWorkout(int rep) throws Exception {
+
+        stand();
+        speak("Welkom bij deze workout.");
+        Thread.sleep(1000);
         speak("Nu gaan we drie stappen naar voren");
         Thread.sleep(1000);
         walk(0.1f, 0f, 0f);
@@ -257,7 +276,7 @@ public class BaseFunctions {
         Thread.sleep(1000);
         walk(-0.1f, 0f, 0f);
         Thread.sleep(2000);
-        speak("Dit herhalen we " + rep + " keer");
+        speak("Dit herhalen we 1000000000 keer");
 
         for (int i = 0; i < rep; i++) {
             Thread.sleep(1000);
@@ -269,8 +288,6 @@ public class BaseFunctions {
         }
 
         Thread.sleep(3000);
-        speak("Nu gaan we weer lekker even lopen op de plaats");
-        Thread.sleep(1000);
         speak("Nu doen we de squat oefening op onze plaats zoals dit");
         Thread.sleep(1000);
         squat(1);
@@ -281,9 +298,8 @@ public class BaseFunctions {
         speak("Dankjewel voor het actief meedoen met deze workout en tot de volgende keer");
     }
 
-
     //Squat, this part makes the robot perform the task of squatting, here
-    // you can also issue the amount if times it should be performed.
+    // you can also issue the amount if times it should be performed by passing an Int.
     public void squat(int reps) throws Exception {
 
         for (int i = 0; i < reps; i++) {
@@ -296,7 +312,7 @@ public class BaseFunctions {
             alMotion.setAngles("RShoulderPitch", 0, 0.3f);
         }
         ALRobotPosture alRobotPosture = new ALRobotPosture(this.application.session());
-        alRobotPosture.goToPosture("Stand", 1.0f);
+        alRobotPosture.goToPosture("Stand",1.0f);
     }
 }
 

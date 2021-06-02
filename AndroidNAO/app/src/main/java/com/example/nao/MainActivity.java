@@ -2,8 +2,11 @@
  * Start page view
  *
  * Date   17-04-2021
+ * Date edited 26-05-2021
  * Author Diego Brandjes
  */
+
+ //FINAL
 
 package com.example.nao;
 
@@ -22,22 +25,26 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button a = findViewById(R.id.button);
         ProgressBar b = findViewById(R.id.progressBar2);
         a.setVisibility(View.INVISIBLE);
 
+        // A delay where a loading icon is hidden after 1 second and a button
+        // will appear in it's place.
         a.postDelayed(new Runnable() {
             @Override
             public void run() {
                 a.setVisibility(View.VISIBLE);
                 b.setVisibility(View.INVISIBLE);
+
             }
         },1000);
     }
 
-    // Fullscreen
+    // Enables Fullscreen
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
@@ -53,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void launchHome(View v) {
 
-        Intent i = new Intent(this, Login.class);
+        //removed Login intent for usability with elderly.
+        Intent i = new Intent(this, Home.class);
         startActivity(i);
     }
 }
