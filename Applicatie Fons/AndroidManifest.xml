@@ -12,7 +12,8 @@
             android:icon="@mipmap/ic_launcher"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/Theme.MyApplication">
+            android:theme="@style/Theme.MyApplication"
+            android:screenOrientation="portrait">
         <activity
                 android:name=".SingasongActivity"
                 android:label="SING A SONG">
